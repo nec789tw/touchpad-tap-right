@@ -1,0 +1,20 @@
+# Claude Code workspace
+.claude/
+
+# Build artifacts
+CSharp/**/bin/
+CSharp/**/obj/
+
+# Vendor driver references (proprietary, do not commit)
+參考檔案/
+
+# IDE
+.vs/
+*.user
+*.suo
+
+# Misc
+*.log
+*.tmp
+Thumbs.db
+__pycache__/

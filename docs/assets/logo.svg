@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <title>TouchpadTapRight</title>
+  <defs><clipPath id="pad"><rect x="20" y="42" width="216" height="172" rx="28"/></clipPath></defs>
+  <rect x="21" y="44" width="220" height="176" rx="30" fill="#0F172A" opacity="0.24"/>
+  <rect x="18" y="40" width="220" height="176" rx="30" fill="#CBD5E1" stroke="#475569" stroke-width="4"/>
+  <rect x="148" y="128" width="90" height="88" fill="#1D4ED8" clip-path="url(#pad)"/>
+  <line x1="148" y1="44" x2="148" y2="212" stroke="#2563EB" stroke-width="4"/>
+  <line x1="24" y1="128" x2="232" y2="128" stroke="#BE123C" stroke-width="4" stroke-dasharray="10 7"/>
+  <circle cx="193" cy="172" r="34" fill="none" stroke="#FFFFFF" stroke-opacity="0.43" stroke-width="4"/>
+  <circle cx="193" cy="172" r="22" fill="none" stroke="#FFFFFF" stroke-opacity="0.75" stroke-width="5"/>
+  <circle cx="193" cy="172" r="11" fill="#FFFFFF" stroke="#1D4ED8" stroke-width="3"/>
+</svg>

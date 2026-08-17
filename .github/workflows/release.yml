@@ -1,0 +1,45 @@
+name: Release
+
+# 推 tag（例：git tag v8.71 && git push --tags）就自動 publish 並上傳 exe 到 GitHub Release。
+# 版本單一來源是 csproj 的 <Version>；tag 必須跟它一致，否則此 workflow 會失敗（防止忘記改版號）。
+# *-legacy 是手動上傳舊版建置的保險 Release，不由此 workflow 建置，所以排除。
+on:
+  push:
+    tags: ['v*', '!v*-legacy']
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 9.0.x
+
+      - name: Check tag matches csproj <Version>
+        shell: pwsh
+        run: |
+          $tag = '${{ github.ref_name }}'.TrimStart('v')
+          $csproj = Get-Content CSharp/TouchpadRightClick/TouchpadRightClick.csproj -Raw
+          $ver = [regex]::Match($csproj, '<Version>([^<]+)</Version>').Groups[1].Value
+          $verShort = ($ver -split '\.')[0..1] -join '.'
+          if ($tag -ne $ver -and $tag -ne $verShort) {
+            Write-Error "tag v$tag 與 csproj <Version>$ver</Version> 不一致，請先改 csproj 再打 tag"
+            exit 1
+          }
+
+      - name: Publish
+        run: dotnet publish CSharp/TouchpadRightClick/TouchpadRightClick.csproj -c Release -r win-x64 -o publish
+
+      - name: Rename asset (ASCII name for a stable download URL)
+        shell: pwsh
+        run: Copy-Item publish/TouchpadTapRight.exe "publish/TouchpadTapRight-${{ github.ref_name }}-win-x64.exe"
+
+      - uses: softprops/action-gh-release@v2
+        with:
+          files: publish/TouchpadTapRight-${{ github.ref_name }}-win-x64.exe
+          generate_release_notes: true

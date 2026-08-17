@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net9.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ApplicationIcon>Resources\app.ico</ApplicationIcon>
+    <PublishSingleFile>true</PublishSingleFile>
+    <SelfContained>true</SelfContained>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
+    <EnableCompressionInSingleFile>true</EnableCompressionInSingleFile>
+    <!-- 版本單一來源:視窗標題、檢查更新、Release 資產名、Actions 的 tag 檢查都讀這裡。發新版只改這行＋打同號 tag。 -->
+    <Version>8.72.1</Version>
+    <AssemblyName>TouchpadTapRight</AssemblyName>
+    <Product>觸控板輕觸右鍵 TouchpadTapRight</Product>
+    <Company>元新電腦</Company>
+    <Copyright>Copyright (c) 2025-2026 元新電腦</Copyright>
+    <RootNamespace>TouchpadRightClick</RootNamespace>
+    <Nullable>disable</Nullable>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- 視窗圖示／標題列 logo 也用同一顆 ico（ApplicationIcon 只管 exe 檔案圖示,Form.Icon 要自己設） -->
+    <EmbeddedResource Include="Resources\app.ico" LogicalName="app.ico" />
+  </ItemGroup>
+
+</Project>
