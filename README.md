@@ -214,8 +214,15 @@ MIT License — Copyright (c) 2025-2026 元新電腦，詳見 [LICENSE](LICENSE)
 - [jrymk/precision-touchpad-advanced-gestures](https://github.com/jrymk/precision-touchpad-advanced-gestures) — 手勢處理概念（GPL-3.0，僅參考概念未複製程式碼）
 - **Claude（Anthropic）** — 開發協作、代碼審查、文件撰寫
 
-**維護者**：元新電腦（[nec789tw](https://github.com/nec789tw)）
+## 這個工具是怎麼來的
+
+一位只能用一隻手指操作觸控板的客人，到門市說他按不了右鍵。市面上找不到現成解法，就自己寫了一支。
+客人用了之後持續回饋，改過好幾版，到現在還在用。
+
+完整緣由與後續：[元新電腦 — 真實案例分享](https://yuanxintec.com.tw/cases/)
 
 ---
 
 **適用對象**：手部精細動作困難者｜單指操作需求者｜觸控板按鍵損壞者
+
+**維護者**：[元新電腦](https://yuanxintec.com.tw)（[nec789tw](https://github.com/nec789tw)）
