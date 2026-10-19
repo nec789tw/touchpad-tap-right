@@ -44,28 +44,15 @@ if %ERRORLEVEL% NEQ 0 (
 )
 echo.
 
-REM 建立可攜式套件
-echo 建立可攜式套件...
-set OUTPUT_DIR=.\TouchpadTapRight_Portable
-if exist %OUTPUT_DIR% rmdir /s /q %OUTPUT_DIR%
-mkdir %OUTPUT_DIR%
-
-copy "bin\Release\net9.0-windows\win-x64\publish\TouchpadTapRight.exe" %OUTPUT_DIR%\ >nul
-copy README.md %OUTPUT_DIR%\ >nul
-
-echo.
+set EXE=bin\Release\net9.0-windows\win-x64\publish\TouchpadTapRight.exe
 echo ======================================================================
 echo ✅ 建置完成！
 echo ======================================================================
 echo.
 echo 執行檔位置:
-echo   bin\Release\net9.0-windows\win-x64\publish\TouchpadTapRight.exe
+echo   %EXE%
 echo.
-echo 可攜式套件:
-echo   %OUTPUT_DIR%\
-echo.
-echo 檔案大小:
-for %%F in ("%OUTPUT_DIR%\TouchpadTapRight.exe") do echo   %%~zF bytes (約 %%~zF/1024/1024 MB)
+for %%F in ("%EXE%") do echo 檔案大小: %%~zF bytes
 echo.
 echo ======================================================================
 pause
