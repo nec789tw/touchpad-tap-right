@@ -8,6 +8,9 @@ CSharp/**/obj/
 # Vendor driver references (proprietary, do not commit)
 參考檔案/
 
+# Maintainer-only docs & old-history bundles (customer / vendor research — never public)
+內部文件/
+
 # IDE
 .vs/
 *.user
