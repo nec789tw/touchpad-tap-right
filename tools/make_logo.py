@@ -5,7 +5,7 @@
 import os
 from PIL import Image, ImageDraw
 
-ROOT = r"D:\python\已完成開發\特殊用途\觸控盤右鍵"
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ASSETS = os.path.join(ROOT, "docs", "assets")
 os.makedirs(ASSETS, exist_ok=True)
 
