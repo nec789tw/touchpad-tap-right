@@ -141,11 +141,11 @@ a{color:var(--jade)}
 <div class="wrap">
 <aside>
   <div class="brand">TouchpadTapRight<small>觸控板輕觸右鍵 開發交接手冊</small></div>
-  <div class="gen">產生於 2026-10-20 11:58<br>由 <code>tools/產生交接網頁.py</code> 自 md 產生</div>
-  <div class="stat"><b>6</b><span>項未完成<br><small>完成者已移除，紀錄見工作狀態</small></span></div>
+  <div class="gen">產生於 2026-10-21 13:02<br>由 <code>tools/產生交接網頁.py</code> 自 md 產生</div>
+  <div class="stat"><b>7</b><span>項未完成<br><small>完成者已移除，紀錄見工作狀態</small></span></div>
   <input id="q" type="search" placeholder="搜尋全部文件…（Ctrl+K）" autocomplete="off">
   <nav id="nav"><a class="navitem" href="#d0"><span class="nt">專案簡介</span><span class="nd">這是什麼、給誰用、怎麼下載／編譯／使用</span></a>
-<a class="navitem" href="#d1"><span class="nt">未完成總表</span><span class="nd">★ 交接第一份：還有什麼沒做、卡在哪</span><span class="npill">6 項</span></a>
+<a class="navitem" href="#d1"><span class="nt">未完成總表</span><span class="nd">★ 交接第一份：還有什麼沒做、卡在哪</span><span class="npill">7 項</span></a>
 <a class="navitem" href="#d2"><span class="nt">工作狀態</span><span class="nd">完成軌跡與決策紀錄（隨工作更新）</span></a>
 <a class="navitem" href="#d3"><span class="nt">社群測試指南</span><span class="nd">沒實機時靠社群回報的 7 步測法與回報方式</span></a>
 <a class="navitem" href="#d4"><span class="nt">架構說明</span><span class="nd">模組職責、事件流、執行緒模型</span></a>
@@ -328,8 +328,8 @@ docs/
 <p><strong>適用對象</strong>：手部精細動作困難者｜單指操作需求者｜觸控板按鍵損壞者</p>
 <p><strong>維護者</strong>：<a href="https://yuanxintec.com.tw">元新電腦</a>（<a href="https://github.com/nec789tw">nec789tw</a>）</p>
 </div></details></div></section>
-<section class="doc" id="d1" data-title="未完成總表"><header class="dh"><div><h2>未完成總表</h2><p class="dd">★ 交接第一份：還有什麼沒做、卡在哪</p></div><div class="meta"><code>docs/未完成盤點總表.md</code><span>更新 2026-08-18 01:06</span></div></header><div class="prog"><span class="todo">尚有 6 項待辦</span></div><nav class="subnav"><a class="sub l2" href="#d1-1">【高】v8.70 起的觸控路徑修改尚未在實機驗證 → 交給社群回報（使用者決定，不主動介入）</a><a class="sub l2" href="#d1-2">【中】Tip Switch / Confidence 讀不到，抬手靠 100ms 沒事件來「猜」</a><a class="sub l2" href="#d1-3">【中】GestureState 狀態機＋Hysteresis、可取消輕觸（C1／C2，from jason5545）</a><a class="sub l2" href="#d1-4">【低】多點觸控時 X/Y 取「最後一個非 0 的 contact slot」</a><a class="sub l2" href="#d1-5">【低】離手偵測靠 WM_TIMER，UI 極忙時會晚到</a><a class="sub l2" href="#d1-6">【低】Synaptics／Alps 未實測</a></nav><div class="foldbar"><button data-fold="open">展開全部</button><button data-fold="close">收合全部</button></div><div class="body"><h2 id="d1-0">未完成盤點總表</h2>
-<blockquote><p>交接第一份要看的文件。慣例：<code>- [ ]</code> 列未完成項，<strong>做完就整項移除</strong>（不留打勾），完成紀錄改記在 <a href="工作狀態.md">工作狀態.md</a>。 每條都要有：現況、證據（檔案:行號）、還差什麼、不做會怎樣。沒有證據的條目不准寫進來。 嚴重度：<span class="sev sev-hi">高</span>要儘快處理／<span class="sev sev-mid">中</span>使用者會有感／<span class="sev sev-lo">低</span>做了更好。 最後查證：2026-08-18（v8.72.1，已公開）。</p></blockquote>
+<section class="doc" id="d1" data-title="未完成總表"><header class="dh"><div><h2>未完成總表</h2><p class="dd">★ 交接第一份：還有什麼沒做、卡在哪</p></div><div class="meta"><code>docs/未完成盤點總表.md</code><span>更新 2026-10-21 13:02</span></div></header><div class="prog"><span class="todo">尚有 7 項待辦</span></div><nav class="subnav"><a class="sub l2" href="#d1-1">【高】v8.70 起的觸控路徑修改尚未在實機驗證 → 交給社群回報（使用者決定，不主動介入）</a><a class="sub l2" href="#d1-2">【中】Tip Switch / Confidence 讀不到，抬手靠 100ms 沒事件來「猜」</a><a class="sub l2" href="#d1-3">【中】GestureState 狀態機＋Hysteresis、可取消輕觸（C1／C2，from jason5545）</a><a class="sub l2" href="#d1-4">【低】多點觸控時 X/Y 取「最後一個非 0 的 contact slot」</a><a class="sub l2" href="#d1-5">【低】離手偵測靠 WM_TIMER，UI 極忙時會晚到</a><a class="sub l2" href="#d1-6">【低】Synaptics／Alps 未實測</a><a class="sub l2" href="#d1-7">【低】文件過期：CHANGELOG 停在 v8.69、CLAUDE.md 開發規範與現況矛盾</a></nav><div class="foldbar"><button data-fold="open">展開全部</button><button data-fold="close">收合全部</button></div><div class="body"><h2 id="d1-0">未完成盤點總表</h2>
+<blockquote><p>交接第一份要看的文件。慣例：<code>- [ ]</code> 列未完成項，<strong>做完就整項移除</strong>（不留打勾），完成紀錄改記在 <a href="工作狀態.md">工作狀態.md</a>。 每條都要有：現況、證據（檔案:行號）、還差什麼、不做會怎樣。沒有證據的條目不准寫進來。 嚴重度：<span class="sev sev-hi">高</span>要儘快處理／<span class="sev sev-mid">中</span>使用者會有感／<span class="sev sev-lo">低</span>做了更好。 最後查證：2026-10-21（v8.72.1；逐項讀程式碼確認仍未做，行號已更新）。</p></blockquote>
 <hr>
 <details class="chap"><summary id="d1-1"><span class="ct"><span class="sev sev-hi">高</span>v8.70 起的觸控路徑修改尚未在實機驗證 → 交給社群回報（使用者決定，不主動介入）</span></summary><div class="cbody">
 <ul>
@@ -337,13 +337,14 @@ docs/
 <li><strong>證據</strong>（這次動到的觸控路徑）：<code>Core/TouchpadMonitor.cs</code> WinForms Timer 觸控結束偵測、<code>Stop()</code> → <code>TapZoneDetector.Reset()</code>、hDevice 綁定＋NULL 守衛、多筆 report 逐筆、<code>IsInRightClickZone</code>；<code>Core/TapZoneDetector.cs</code> 進入拖曳加 <code>DragMoveTolerance</code>（預設 6%，<code>config.json</code> 可調）</li>
 <li><strong>已備的配套</strong>（v8.72）：<code>config.json</code> 把所有門檻開成可調（<code>Utils/AppSettings.cs</code>）；<code>v8.69-legacy</code> Release 當已知良好基準；<code>docs/測試指南.md</code> 7 步＋<code>.github/ISSUE_TEMPLATE/bug_report.md</code> 要求附 <code>app.log</code>；README「使用前請先看」明講未實測</li>
 <li><strong>還差什麼</strong>：收到社群回報後：(a) 若某參數普遍要調，改 <code>Core/TapZoneDetector.cs</code> 的 <code>DEFAULT_*</code>；(b) 若舊版正常新版不正常，對照 <code>app.log</code> 找回歸</li>
+<li><strong>社群回報實況</strong>（2026-10-21 <code>gh api</code>）：公開兩個月，v8.72.1 下載 4 次、v8.69-legacy 0 次、Issue 0 筆、star 4、fork 0；近 14 天瀏覽 7（4 人）。<strong>等回報這條路目前沒有產出任何資料</strong></li>
 <li><strong>不做會怎樣</strong>：這是社群測試中的版本，README 已明講；沒人回報就沒人知道對不對</li>
 </ul>
 </div></details>
 <details class="chap"><summary id="d1-2"><span class="ct"><span class="sev sev-mid">中</span>Tip Switch / Confidence 讀不到，抬手靠 100ms 沒事件來「猜」</span></summary><div class="cbody">
 <ul>
 <li class="task open"><span class="cb"></span><strong>現況</strong>：只用 <code>HidP_GetValueCaps</code> 找 Usage；標準 PTP 描述子把 Tip Switch(0x42)/Confidence(0x47) 宣告成 1-bit → hidparse 歸為 <strong>button caps</strong>，Value Caps 裡根本沒有　<strong>工作量</strong>：中（1 天＋實機）</li>
-<li><strong>證據</strong>：<code>Core/HidApiParser.cs:199</code> 只呼叫 <code>HidP_GetValueCaps</code>；<code>:227</code> 在 value caps 裡找 <code>USAGE_TIP_SWITCH</code>；全檔沒有 <code>HidP_GetButtonCaps</code>／<code>HidP_GetUsages</code> 的 P/Invoke（<code>:103-115</code> 只有 GetCaps/GetValueCaps/GetUsageValue）；<code>:471</code> <code>DetermineTouchState</code> 因此退回 ContactCount&gt;0；<code>Core/TouchpadMonitor.cs:375</code> <code>CheckTouchEnd</code> 用「100ms 沒新事件」補判抬手</li>
+<li><strong>證據</strong>：<code>Core/HidApiParser.cs:204</code> 只呼叫 <code>HidP_GetValueCaps</code>；<code>:232</code> 在 value caps 裡找 <code>USAGE_TIP_SWITCH</code>；全檔沒有 <code>HidP_GetButtonCaps</code>／<code>HidP_GetUsages</code> 的 P/Invoke（<code>:104-109</code> 只有 GetCaps/GetValueCaps）；<code>:476</code> <code>DetermineTouchState</code> 因此退回 ContactCount&gt;0（<code>:481</code>）；<code>Core/TouchpadMonitor.cs:383</code> <code>CheckTouchEnd</code> 用「100ms 沒新事件」補判抬手</li>
 <li><strong>還差什麼</strong>：Initialize 加 <code>HidP_GetButtonCaps(HidP_Input)</code> 找 Digitizer page 的 Tip Switch/Confidence（記 LinkCollection）；TryParse 用 <code>HidP_GetUsages</code> 判斷 usage 是否 asserted，當作 isTouching 主來源；ContactCount 只做 fallback。做完 CheckTouchEnd 的啟發式可以退居保險</li>
 <li><strong>不做會怎樣</strong>：抬手固定慢 100ms；診斷頁 Confidence 恆 false；持續回報同座標的裝置（Lite-On）邊界情況只能靠啟發式；C1/C2 的狀態機做在錯的基礎上</li>
 </ul>
@@ -351,7 +352,7 @@ docs/
 <details class="chap"><summary id="d1-3"><span class="ct"><span class="sev sev-mid">中</span>GestureState 狀態機＋Hysteresis、可取消輕觸（C1／C2，from jason5545）</span></summary><div class="cbody">
 <ul>
 <li class="task open"><span class="cb"></span><strong>現況</strong>：<code>TapZoneDetector</code> 用 <code>_isTracking</code>／<code>_isDragging</code> 兩個 bool 表達狀態；沒有 hysteresis，也沒有「這次觸碰已確定不是輕觸」的取消旗標　<strong>工作量</strong>：中（需實機）</li>
-<li><strong>證據</strong>：<code>Core/TapZoneDetector.cs:36</code>、<code>:43</code>；<code>ProcessTouchEnd</code>（<code>:171-</code>）每次都重新從 <code>_maxDistance</code>／時間判定</li>
+<li><strong>證據</strong>：<code>Core/TapZoneDetector.cs:41</code>（<code>_isTracking</code>）、<code>:48</code>（<code>_isDragging</code>）；<code>ProcessTouchEnd</code>（<code>:190-</code>）每次都重新從 <code>_maxDistance</code>／時間判定</li>
 <li><strong>還差什麼</strong>：等上面 Tip Switch 那項做完再做——狀態機蓋在正確的抬手訊號上才有意義。設計參考 jason5545 fork</li>
 <li><strong>不做會怎樣</strong>：邊界情況（區域邊緣抖動、快速連點）的行為靠一堆 if 拼起來，難改難測</li>
 </ul>
@@ -359,7 +360,7 @@ docs/
 <details class="chap"><summary id="d1-4"><span class="ct"><span class="sev sev-lo">低</span>多點觸控時 X/Y 取「最後一個非 0 的 contact slot」</span></summary><div class="cbody">
 <ul>
 <li class="task open"><span class="cb"></span><strong>現況</strong>：<code>ExtractCoordinates</code> 迭代全部 Generic Desktop caps，遇非 0 就覆寫；多根手指（或掌側誤觸）時座標可能在不同 slot 間跳　<strong>工作量</strong>：小（需實機）</li>
-<li><strong>證據</strong>：<code>Core/HidApiParser.cs:376-407</code>（<code>:392</code> 非 0 就覆寫，沒有 break 也沒有依 contact 選擇）</li>
+<li><strong>證據</strong>：<code>Core/HidApiParser.cs:372-412</code>（<code>:398</code> 值為 0 才跳過，非 0 就覆寫 RawX/RawY，沒有 break 也沒有依 contact 選擇）</li>
 <li><strong>還差什麼</strong>：依 Contact ID／該 slot 的 Tip Switch 鎖定同一個 contact 追蹤到離開（依賴上面 Tip Switch 那項）</li>
 <li><strong>不做會怎樣</strong>：單指使用者幾乎無感；掌側碰到時偶爾輕觸被判「非輕觸」</li>
 </ul>
@@ -367,7 +368,7 @@ docs/
 <details class="chap"><summary id="d1-5"><span class="ct"><span class="sev sev-lo">低</span>離手偵測靠 WM_TIMER，UI 極忙時會晚到</span></summary><div class="cbody">
 <ul>
 <li class="task open"><span class="cb"></span><strong>現況</strong>：<code>CheckTouchEnd</code> 靠 WinForms Timer（WM_TIMER 是最低優先權訊息）。v8.71 已讓看不見的頁面不重繪、診斷頁 Label 固定尺寸，WM_PAINT 本身會合併，一般不會有感；只有診斷頁開著且 UI 極忙時可能疊到 300ms 輕觸判定　<strong>工作量</strong>：小</li>
-<li><strong>證據</strong>：<code>Core/TouchpadMonitor.cs</code> <code>CheckTouchEnd</code>；<code>UI/ModernMainForm.cs</code> <code>Monitor_TouchEvent</code></li>
+<li><strong>證據</strong>：<code>Core/TouchpadMonitor.cs:54</code> <code>System.Windows.Forms.Timer</code>（<code>:3</code> using）、<code>:383</code> <code>CheckTouchEnd</code>；<code>UI/ModernMainForm.cs</code> <code>Monitor_TouchEvent</code></li>
 <li><strong>還差什麼</strong>：若社群回報「診斷頁開著時輕觸偶爾沒反應」再處理：<code>Monitor_TouchEvent</code> 節流或離手偵測改高精度計時</li>
 <li><strong>不做會怎樣</strong>：診斷頁開著時偶爾輕觸被判太長</li>
 </ul>
@@ -375,9 +376,17 @@ docs/
 <details class="chap"><summary id="d1-6"><span class="ct"><span class="sev sev-lo">低</span>Synaptics／Alps 未實測</span></summary><div class="cbody">
 <ul>
 <li class="task open"><span class="cb"></span><strong>現況</strong>：只有 ELAN、Lite-On 實測過　<strong>工作量</strong>：取決於借得到機器</li>
-<li><strong>證據</strong>：<code>docs/architecture.md</code> 相容性表；實測紀錄目前只有 ELAN、Lite-On、Intel PTP、MSI（維護者內部文件）</li>
+<li><strong>證據</strong>：<code>docs/architecture.md:45-46</code> 相容性表標「⚠️ 未實測」；實測紀錄目前只有 ELAN、Lite-On、Intel PTP、MSI（維護者內部文件）</li>
 <li><strong>還差什麼</strong>：借機實測，或靠社群依 <code>docs/測試指南.md</code> 回報「硬體檢測」輸出</li>
 <li><strong>不做會怎樣</strong>：README 只能寫「理論上可行」</li>
+</ul>
+</div></details>
+<details class="chap"><summary id="d1-7"><span class="ct"><span class="sev sev-lo">低</span>文件過期：CHANGELOG 停在 v8.69、CLAUDE.md 開發規範與現況矛盾</span></summary><div class="cbody">
+<ul>
+<li class="task open"><span class="cb"></span><strong>現況</strong>：2026-10-21 盤點時發現，兩處都是文件，不影響程式　<strong>工作量</strong>：小（半小時）</li>
+<li><strong>證據</strong>：<code>CSharp/TouchpadRightClick/CHANGELOG.md:3</code> 最新一節是 <code>[v8.69]</code>，v8.70／v8.71／v8.72／v8.72.1 都沒記（這幾版的內容在 README「版本說明」表與本目錄 <code>工作狀態.md</code>）；<code>CLAUDE.md:174</code> 要求「每次修改都要更新 CHANGELOG.md」、<code>:176</code> 要求「代碼中加入版本註解（如 <code>// v8.63: 說明</code>）」，但 v8.69 已清掉 168 個版本註解，現在全 repo 只剩 <code>Program.cs:22</code> 一處</li>
+<li><strong>還差什麼</strong>：二選一——CHANGELOG 補齊四版，或刪掉 CHANGELOG 改指向 README 版本表；CLAUDE.md 刪掉第 176 行那條規則（v8.61–v8.64 的舊段落也可一併精簡）</li>
+<li><strong>不做會怎樣</strong>：CLAUDE.md 每次開 session 都會載入，下一個接手的 Claude 會照第 176 行把版本註解加回程式碼；外部讀者看 CHANGELOG 會以為最新版是 v8.69</li>
 </ul>
 </div></details></div></section>
 <section class="doc" id="d2" data-title="工作狀態"><header class="dh"><div><h2>工作狀態</h2><p class="dd">完成軌跡與決策紀錄（隨工作更新）</p></div><div class="meta"><code>docs/工作狀態.md</code><span>更新 2026-10-20 11:58</span></div></header><nav class="subnav"><a class="sub l2" href="#d2-1">2026-10-20　repo 與本機資料夾瘦身</a><a class="sub l2" href="#d2-2">2026-08-17　公開前 git 歷史歸零</a><a class="sub l2" href="#d2-3">2026-08-17　v8.72.1：視窗圖示</a><a class="sub l2" href="#d2-4">2026-08-17　v8.72：開源釋出版——設定檔＋開機自啟＋.NET 9 深色＋logo＋保險版＋測試指南</a><a class="sub l3" href="#d2-5">決策（使用者拍板）</a><a class="sub l3" href="#d2-6">程式碼證據</a><a class="sub l3" href="#d2-7">驗證方式</a><a class="sub l2" href="#d2-8">2026-08-17　v8.71：寫檔日誌＋改名 TouchpadTapRight＋UI 翻新（無障礙）</a><a class="sub l3" href="#d2-9">決策</a><a class="sub l3" href="#d2-10">程式碼證據</a><a class="sub l3" href="#d2-11">驗證方式</a><a class="sub l2" href="#d2-12">2026-08-17　v8.70：review 修正＋檢查更新＋自動發布＋交接手冊</a><a class="sub l3" href="#d2-13">決策</a><a class="sub l3" href="#d2-14">Code review（Workflow：5 面向 finders → 每條 2 個反對者驗證）</a><a class="sub l3" href="#d2-15">新功能</a><a class="sub l3" href="#d2-16">驗證方式</a><a class="sub l2" href="#d2-17">2026-08 之前　v8.69 及更早</a></nav><div class="foldbar"><button data-fold="open">展開全部</button><button data-fold="close">收合全部</button></div><div class="body"><h2 id="d2-0">工作狀態</h2>
