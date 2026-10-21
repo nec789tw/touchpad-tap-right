@@ -141,11 +141,11 @@ a{color:var(--jade)}
 <div class="wrap">
 <aside>
   <div class="brand">TouchpadTapRight<small>觸控板輕觸右鍵 開發交接手冊</small></div>
-  <div class="gen">產生於 2026-10-21 13:02<br>由 <code>tools/產生交接網頁.py</code> 自 md 產生</div>
-  <div class="stat"><b>7</b><span>項未完成<br><small>完成者已移除，紀錄見工作狀態</small></span></div>
+  <div class="gen">產生於 2026-10-21 13:18<br>由 <code>tools/產生交接網頁.py</code> 自 md 產生</div>
+  <div class="stat"><b>6</b><span>項未完成<br><small>完成者已移除，紀錄見工作狀態</small></span></div>
   <input id="q" type="search" placeholder="搜尋全部文件…（Ctrl+K）" autocomplete="off">
   <nav id="nav"><a class="navitem" href="#d0"><span class="nt">專案簡介</span><span class="nd">這是什麼、給誰用、怎麼下載／編譯／使用</span></a>
-<a class="navitem" href="#d1"><span class="nt">未完成總表</span><span class="nd">★ 交接第一份：還有什麼沒做、卡在哪</span><span class="npill">7 項</span></a>
+<a class="navitem" href="#d1"><span class="nt">未完成總表</span><span class="nd">★ 交接第一份：還有什麼沒做、卡在哪</span><span class="npill">6 項</span></a>
 <a class="navitem" href="#d2"><span class="nt">工作狀態</span><span class="nd">完成軌跡與決策紀錄（隨工作更新）</span></a>
 <a class="navitem" href="#d3"><span class="nt">社群測試指南</span><span class="nd">沒實機時靠社群回報的 7 步測法與回報方式</span></a>
 <a class="navitem" href="#d4"><span class="nt">架構說明</span><span class="nd">模組職責、事件流、執行緒模型</span></a>
@@ -328,7 +328,7 @@ docs/
 <p><strong>適用對象</strong>：手部精細動作困難者｜單指操作需求者｜觸控板按鍵損壞者</p>
 <p><strong>維護者</strong>：<a href="https://yuanxintec.com.tw">元新電腦</a>（<a href="https://github.com/nec789tw">nec789tw</a>）</p>
 </div></details></div></section>
-<section class="doc" id="d1" data-title="未完成總表"><header class="dh"><div><h2>未完成總表</h2><p class="dd">★ 交接第一份：還有什麼沒做、卡在哪</p></div><div class="meta"><code>docs/未完成盤點總表.md</code><span>更新 2026-10-21 13:02</span></div></header><div class="prog"><span class="todo">尚有 7 項待辦</span></div><nav class="subnav"><a class="sub l2" href="#d1-1">【高】v8.70 起的觸控路徑修改尚未在實機驗證 → 交給社群回報（使用者決定，不主動介入）</a><a class="sub l2" href="#d1-2">【中】Tip Switch / Confidence 讀不到，抬手靠 100ms 沒事件來「猜」</a><a class="sub l2" href="#d1-3">【中】GestureState 狀態機＋Hysteresis、可取消輕觸（C1／C2，from jason5545）</a><a class="sub l2" href="#d1-4">【低】多點觸控時 X/Y 取「最後一個非 0 的 contact slot」</a><a class="sub l2" href="#d1-5">【低】離手偵測靠 WM_TIMER，UI 極忙時會晚到</a><a class="sub l2" href="#d1-6">【低】Synaptics／Alps 未實測</a><a class="sub l2" href="#d1-7">【低】文件過期：CHANGELOG 停在 v8.69、CLAUDE.md 開發規範與現況矛盾</a></nav><div class="foldbar"><button data-fold="open">展開全部</button><button data-fold="close">收合全部</button></div><div class="body"><h2 id="d1-0">未完成盤點總表</h2>
+<section class="doc" id="d1" data-title="未完成總表"><header class="dh"><div><h2>未完成總表</h2><p class="dd">★ 交接第一份：還有什麼沒做、卡在哪</p></div><div class="meta"><code>docs/未完成盤點總表.md</code><span>更新 2026-10-21 13:18</span></div></header><div class="prog"><span class="todo">尚有 6 項待辦</span></div><nav class="subnav"><a class="sub l2" href="#d1-1">【高】v8.70 起的觸控路徑修改尚未在實機驗證 → 交給社群回報（使用者決定，不主動介入）</a><a class="sub l2" href="#d1-2">【中】Tip Switch / Confidence 讀不到，抬手靠 100ms 沒事件來「猜」</a><a class="sub l2" href="#d1-3">【中】GestureState 狀態機＋Hysteresis、可取消輕觸（C1／C2，from jason5545）</a><a class="sub l2" href="#d1-4">【低】多點觸控時 X/Y 取「最後一個非 0 的 contact slot」</a><a class="sub l2" href="#d1-5">【低】離手偵測靠 WM_TIMER，UI 極忙時會晚到</a><a class="sub l2" href="#d1-6">【低】Synaptics／Alps 未實測</a></nav><div class="foldbar"><button data-fold="open">展開全部</button><button data-fold="close">收合全部</button></div><div class="body"><h2 id="d1-0">未完成盤點總表</h2>
 <blockquote><p>交接第一份要看的文件。慣例：<code>- [ ]</code> 列未完成項，<strong>做完就整項移除</strong>（不留打勾），完成紀錄改記在 <a href="工作狀態.md">工作狀態.md</a>。 每條都要有：現況、證據（檔案:行號）、還差什麼、不做會怎樣。沒有證據的條目不准寫進來。 嚴重度：<span class="sev sev-hi">高</span>要儘快處理／<span class="sev sev-mid">中</span>使用者會有感／<span class="sev sev-lo">低</span>做了更好。 最後查證：2026-10-21（v8.72.1；逐項讀程式碼確認仍未做，行號已更新）。</p></blockquote>
 <hr>
 <details class="chap"><summary id="d1-1"><span class="ct"><span class="sev sev-hi">高</span>v8.70 起的觸控路徑修改尚未在實機驗證 → 交給社群回報（使用者決定，不主動介入）</span></summary><div class="cbody">
@@ -380,19 +380,18 @@ docs/
 <li><strong>還差什麼</strong>：借機實測，或靠社群依 <code>docs/測試指南.md</code> 回報「硬體檢測」輸出</li>
 <li><strong>不做會怎樣</strong>：README 只能寫「理論上可行」</li>
 </ul>
-</div></details>
-<details class="chap"><summary id="d1-7"><span class="ct"><span class="sev sev-lo">低</span>文件過期：CHANGELOG 停在 v8.69、CLAUDE.md 開發規範與現況矛盾</span></summary><div class="cbody">
-<ul>
-<li class="task open"><span class="cb"></span><strong>現況</strong>：2026-10-21 盤點時發現，兩處都是文件，不影響程式　<strong>工作量</strong>：小（半小時）</li>
-<li><strong>證據</strong>：<code>CSharp/TouchpadRightClick/CHANGELOG.md:3</code> 最新一節是 <code>[v8.69]</code>，v8.70／v8.71／v8.72／v8.72.1 都沒記（這幾版的內容在 README「版本說明」表與本目錄 <code>工作狀態.md</code>）；<code>CLAUDE.md:174</code> 要求「每次修改都要更新 CHANGELOG.md」、<code>:176</code> 要求「代碼中加入版本註解（如 <code>// v8.63: 說明</code>）」，但 v8.69 已清掉 168 個版本註解，現在全 repo 只剩 <code>Program.cs:22</code> 一處</li>
-<li><strong>還差什麼</strong>：二選一——CHANGELOG 補齊四版，或刪掉 CHANGELOG 改指向 README 版本表；CLAUDE.md 刪掉第 176 行那條規則（v8.61–v8.64 的舊段落也可一併精簡）</li>
-<li><strong>不做會怎樣</strong>：CLAUDE.md 每次開 session 都會載入，下一個接手的 Claude 會照第 176 行把版本註解加回程式碼；外部讀者看 CHANGELOG 會以為最新版是 v8.69</li>
-</ul>
 </div></details></div></section>
-<section class="doc" id="d2" data-title="工作狀態"><header class="dh"><div><h2>工作狀態</h2><p class="dd">完成軌跡與決策紀錄（隨工作更新）</p></div><div class="meta"><code>docs/工作狀態.md</code><span>更新 2026-10-20 11:58</span></div></header><nav class="subnav"><a class="sub l2" href="#d2-1">2026-10-20　repo 與本機資料夾瘦身</a><a class="sub l2" href="#d2-2">2026-08-17　公開前 git 歷史歸零</a><a class="sub l2" href="#d2-3">2026-08-17　v8.72.1：視窗圖示</a><a class="sub l2" href="#d2-4">2026-08-17　v8.72：開源釋出版——設定檔＋開機自啟＋.NET 9 深色＋logo＋保險版＋測試指南</a><a class="sub l3" href="#d2-5">決策（使用者拍板）</a><a class="sub l3" href="#d2-6">程式碼證據</a><a class="sub l3" href="#d2-7">驗證方式</a><a class="sub l2" href="#d2-8">2026-08-17　v8.71：寫檔日誌＋改名 TouchpadTapRight＋UI 翻新（無障礙）</a><a class="sub l3" href="#d2-9">決策</a><a class="sub l3" href="#d2-10">程式碼證據</a><a class="sub l3" href="#d2-11">驗證方式</a><a class="sub l2" href="#d2-12">2026-08-17　v8.70：review 修正＋檢查更新＋自動發布＋交接手冊</a><a class="sub l3" href="#d2-13">決策</a><a class="sub l3" href="#d2-14">Code review（Workflow：5 面向 finders → 每條 2 個反對者驗證）</a><a class="sub l3" href="#d2-15">新功能</a><a class="sub l3" href="#d2-16">驗證方式</a><a class="sub l2" href="#d2-17">2026-08 之前　v8.69 及更早</a></nav><div class="foldbar"><button data-fold="open">展開全部</button><button data-fold="close">收合全部</button></div><div class="body"><h2 id="d2-0">工作狀態</h2>
+<section class="doc" id="d2" data-title="工作狀態"><header class="dh"><div><h2>工作狀態</h2><p class="dd">完成軌跡與決策紀錄（隨工作更新）</p></div><div class="meta"><code>docs/工作狀態.md</code><span>更新 2026-10-21 13:18</span></div></header><nav class="subnav"><a class="sub l2" href="#d2-1">2026-10-21　文件過期清理</a><a class="sub l2" href="#d2-2">2026-10-20　repo 與本機資料夾瘦身</a><a class="sub l2" href="#d2-3">2026-08-17　公開前 git 歷史歸零</a><a class="sub l2" href="#d2-4">2026-08-17　v8.72.1：視窗圖示</a><a class="sub l2" href="#d2-5">2026-08-17　v8.72：開源釋出版——設定檔＋開機自啟＋.NET 9 深色＋logo＋保險版＋測試指南</a><a class="sub l3" href="#d2-6">決策（使用者拍板）</a><a class="sub l3" href="#d2-7">程式碼證據</a><a class="sub l3" href="#d2-8">驗證方式</a><a class="sub l2" href="#d2-9">2026-08-17　v8.71：寫檔日誌＋改名 TouchpadTapRight＋UI 翻新（無障礙）</a><a class="sub l3" href="#d2-10">決策</a><a class="sub l3" href="#d2-11">程式碼證據</a><a class="sub l3" href="#d2-12">驗證方式</a><a class="sub l2" href="#d2-13">2026-08-17　v8.70：review 修正＋檢查更新＋自動發布＋交接手冊</a><a class="sub l3" href="#d2-14">決策</a><a class="sub l3" href="#d2-15">Code review（Workflow：5 面向 finders → 每條 2 個反對者驗證）</a><a class="sub l3" href="#d2-16">新功能</a><a class="sub l3" href="#d2-17">驗證方式</a><a class="sub l2" href="#d2-18">2026-08 之前　v8.69 及更早</a></nav><div class="foldbar"><button data-fold="open">展開全部</button><button data-fold="close">收合全部</button></div><div class="body"><h2 id="d2-0">工作狀態</h2>
 <blockquote><p>完成軌跡與決策紀錄。未完成的事<strong>不寫這裡</strong>，寫 <a href="未完成盤點總表.md">未完成盤點總表.md</a>（做完再搬過來）。 每條附程式碼證據（檔案:行號 / commit / 測試方式）。</p></blockquote>
 <hr>
-<details class="chap"><summary id="d2-1"><span class="ct">2026-10-20　repo 與本機資料夾瘦身</span></summary><div class="cbody">
+<details class="chap"><summary id="d2-1"><span class="ct">2026-10-21　文件過期清理</span></summary><div class="cbody">
+<ul>
+<li>刪除 <code>CSharp/TouchpadRightClick/CHANGELOG.md</code>：最新一節停在 v8.69，v8.70–v8.72.1 都沒記，外部讀者會以為最新版是 v8.69。對外版本紀錄以 README「版本說明」表為準，細節在本檔。舊日誌（v8.23–v8.69，含「技術債務追蹤」，全是已解決項）仍可用 <code>git show 556c15f:CSharp/TouchpadRightClick/CHANGELOG.md</code> 叫出。</li>
+<li><code>CLAUDE.md</code> 183 → 48 行：刪掉「代碼中加入版本註解」（跟 v8.69 清掉 168 個版本註解矛盾，且 CLAUDE.md 每次開 session 都會載入，會讓接手的 Claude 把註解加回去）與「每次修改都要更新 CHANGELOG」；v8.61–v8.64 舊段落刪除（描述的 <code>TouchInputMonitor</code> 等已不存在），v8.69 縮成一段；開發規範改寫成現行做法（版本單一來源 csproj、紀錄寫 README＋工作狀態、不寫版本註解）。</li>
+<li>對應的<span class="sev sev-lo">低</span>項已從未完成總表移除。</li>
+</ul>
+</div></details>
+<details class="chap"><summary id="d2-2"><span class="ct">2026-10-20　repo 與本機資料夾瘦身</span></summary><div class="cbody">
 <ul>
 <li>刪除 7 個死檔（<code>git rm</code>）：<code>tools/cleanup.bat</code>（2025 一次性搬家腳本，操作的 <code>openspec/</code> 早已不存在）、<code>tools/install_dotnet.bat</code>／<code>tools/快速安裝dotnet.bat</code>（裝 .NET 8，專案是 .NET 9，照做會建置失敗）、<code>tools/dotnet-install.ps1</code>（微軟官方腳本副本，無任何引用；要裝 SDK 用 <code>winget install Microsoft.DotNet.SDK.9</code>）、<code>tools/signing/</code> 兩檔（簽 v8.5／v8.6 舊檔名與 net8.0 路徑，已不可能成功；不買憑證的決策見下方 v8.72 段）、<code>CSharp/TouchpadRightClick/README.md</code>（根目錄 README 的過期副本）。<code>tools/</code> 只剩 <code>make_logo.py</code>、<code>產生交接網頁.py</code>。</li>
 <li><code>CSharp/TouchpadRightClick/build.bat</code>：拿掉「可攜式套件」步驟（只是把 exe 和上面那份過期 README 複製到未被 gitignore 的 <code>TouchpadTapRight_Portable/</code>）；產物就在 <code>bin\Release\net9.0-windows\win-x64\publish\TouchpadTapRight.exe</code>。正式發佈仍走 <code>release.yml</code>。另加 <code>.gitattributes</code>（<code>*.bat text eol=crlf</code>），讓 ZIP 下載或 autocrlf=false 的 clone 也拿到 CRLF 的 .bat。驗證：<code>cmd /c &quot;.uild.bat &lt; nul&quot;</code> 建置＋publish 成功（exe 50,513,125 B），exe 啟動後視窗標題「觸控板輕觸右鍵 v8.72.1」。</li>
@@ -400,7 +399,7 @@ docs/
 <li>本機資料夾改名為 <code>TouchpadTapRight ｜ 觸控板輕觸右鍵</code>（跟 README 首行一致）。<code>tools/make_logo.py</code> 原本寫死舊的絕對路徑，改成從腳本位置推算 repo 根目錄；在新路徑實跑，產出的 logo／ico 跟版控內容逐位元組相同。</li>
 </ul>
 </div></details>
-<details class="chap"><summary id="d2-2"><span class="ct">2026-08-17　公開前 git 歷史歸零</span></summary><div class="cbody">
+<details class="chap"><summary id="d2-3"><span class="ct">2026-08-17　公開前 git 歷史歸零</span></summary><div class="cbody">
 <ul>
 <li>開源公開前把 repo 歷史壓成單一「初始公開版」commit（v8.72.1 的檔案狀態）：開發期間的 commit 大半是反覆重產文件與措辭修改，對外沒有價值、容易被斷章取義。<strong>本文件裡描述的各版本演進仍是事實</strong>，只是不再對應到 git 上的 commit；完整舊歷史備份在維護者本機的 <code>內部文件/history/觸控盤右鍵.history-backup-20260817.bundle</code>（<code>git clone &lt;bundle&gt;</code> 可還原）。</li>
 <li>Release 的 tag 一併重建：<code>v8.72.1</code>（現行）、<code>v8.69-legacy</code>（保險版，pre-release）；v8.70／v8.71／v8.72 的 Release 已移除（都被 v8.72.1 涵蓋，README 版本說明表保留其內容）。</li>
@@ -410,7 +409,7 @@ docs/
 <li>歸零後從 Release 頁下載 <code>TouchpadTapRight-v8.72.1-win-x64.exe</code> 重跑 smoke（歡迎→主視窗→開始/停止監控→檢查更新「已是最新版本 v8.72.1」→乾淨退出）：見本檔下方 v8.72.1 段落的驗證方式。</li>
 </ul>
 </div></details>
-<details class="chap"><summary id="d2-3"><span class="ct">2026-08-17　v8.72.1：視窗圖示</span></summary><div class="cbody">
+<details class="chap"><summary id="d2-4"><span class="ct">2026-08-17　v8.72.1：視窗圖示</span></summary><div class="cbody">
 <ul>
 <li>使用者發現「應用程式打開後 logo 沒換」：<code>ApplicationIcon</code> 只管 exe 檔案圖示，<code>Form.Icon</code> 從來沒設過（一直是 WinForms 預設）。修：app.ico 內嵌成資源（csproj <code>EmbeddedResource LogicalName=&quot;app.ico&quot;</code>），<code>ModernMainForm.LoadAppIcon</code> 設 <code>Form.Icon</code>（標題列／工作列）並在標題列左側放 64px logo。PrintWindow 截圖確認。</li>
 <li><strong>淺／深色一鍵切換</strong>（使用者要求：目標使用者行動不便，不能要他捲動再確認）：標題列「🌙 深色／☀ 淺色」按鈕（<code>ModernMainForm.ThemeButton_Click</code>）→ 存設定 → 以 <code>/restart</code>（跳過歡迎視窗）＋<code>/monitor</code>（原本在監控就自動恢復）開新實例 → 自己 Close；<code>Program.Main</code> 第二實例會等舊 Mutex 最多 5 秒（<code>WaitOne</code>），不會跳「已在執行中」。實測：淺→深一鍵完成、無對話框、監控恢復；閒置 25 秒／切換後閒置 15 秒都不會自己再切。</li>
@@ -418,8 +417,8 @@ docs/
 <li>清掉 <code>bin/obj/Release/net8.0-windows</code> 舊產物（升 .NET 9 後留下的，會讓人搞混哪個是現行）。</li>
 </ul>
 </div></details>
-<details class="chap"><summary id="d2-4"><span class="ct">2026-08-17　v8.72：開源釋出版——設定檔＋開機自啟＋.NET 9 深色＋logo＋保險版＋測試指南</span></summary><div class="cbody">
-<h4 id="d2-5">決策（使用者拍板）</h4>
+<details class="chap"><summary id="d2-5"><span class="ct">2026-08-17　v8.72：開源釋出版——設定檔＋開機自啟＋.NET 9 深色＋logo＋保險版＋測試指南</span></summary><div class="cbody">
+<h4 id="d2-6">決策（使用者拍板）</h4>
 <ul>
 <li><strong>實機驗證交給社群回報，維護者不主動介入</strong>；因此把所有沒實機沒法校準的門檻開成 <code>config.json</code> 參數、備 v8.69-legacy 當基準、寫測試指南與 Issue 範本、README 開頭明講「未實機驗證」。</li>
 <li><strong>不購買程式碼簽章憑證</strong>：exe 維持未簽章（原本寫「自簽」，但 release.yml 從未簽章，自簽腳本也已於 2026-10-20 刪除），README 寫 SmartScreen 繞過方式；此項從未完成總表移除（是決定，不是待辦）。</li>
@@ -428,9 +427,9 @@ docs/
 <li><strong>兩台觸控板待辦刪除</strong>（v8.71 已刪）；<strong>日誌用文字檔不用 DB</strong>（v8.71 已定）。</li>
 <li>「GestureState 狀態機」對使用者的解釋記在此：把兩個 bool 拼的判定改成明確狀態（落下→已移動鎖死→按住夠久→拖曳→放手），加遲滯與可取消；是重構不是功能，排在 Tip Switch 之後。</li>
 </ul>
-<h4 id="d2-6">程式碼證據</h4>
+<h4 id="d2-7">程式碼證據</h4>
 <div class="tw"><table><thead><tr><th>項目</th><th>檔案</th></tr></thead><tbody><tr><td>設定檔</td><td><code>Utils/AppSettings.cs</code>：<code>Load</code> :51（壞檔回預設＋log）、<code>ApplyTo</code> :84、<code>Clamp</code> :100（亂填夾回範圍）、<code>AutoStartMonitoring</code> :31；<code>Core/TapZoneDetector.cs:65/72</code> <code>DragHoldThresholdMs</code>／<code>DragMoveTolerance</code> 由 const 改屬性（<code>DEFAULT_*</code> 公開）；<code>Core/TouchpadMonitor.cs:30</code> <code>TouchEndTimeoutMs</code>；<code>UI/ModernMainForm.cs</code> 滑桿初值來自 <code>_settings</code>、<code>ScheduleSave</code> :604（400ms 合併寫檔）、<code>_settings.ApplyTo(_monitor)</code> :756、FormClosing 立即存</td></tr><tr><td>開機自啟</td><td><code>Utils/AutoStart.cs</code>：<code>Enable</code> :44（<code>schtasks /Create /F /SC ONLOGON /RL HIGHEST /TR &quot;\&quot;exe\&quot;&quot;</code>）、<code>IsEnabled</code> :33、<code>RepairPathIfMoved</code> :61（登記路徑≠目前 exe 就重登）、<code>IsInDownloads</code>；<code>UI/ModernMainForm.cs</code> <code>AutoStartCheckBox_Changed</code> :611（失敗還原勾選＋說明）、OnLoad 背景查詢狀態 :120-130、<code>AutoStartMonitoring</code> :132 啟動後自動按開始</td></tr><tr><td>.NET 9 深色</td><td><code>TouchpadRightClick.csproj:4</code> <code>net9.0-windows</code>（移除 System.Text.Json 套件參考，內建）；<code>Program.cs:18</code> <code>SetColorMode(Theme.Dark ? Dark : Classic)</code>；<code>UI/SimpleTouchpadPreview.cs</code> 屬性加 <code>DesignerSerializationVisibility</code>（WFO1000）</td></tr><tr><td>版面</td><td><code>UI/ModernMainForm.cs:235</code> 左欄 TLP 補 <code>ColumnStyle Percent 100</code>（<strong>之前沒設 → 欄寬被長文字撐到溢出、預覽偏右左邊空一塊</strong>，使用者抓到的）；<code>:308</code> 設定卡 <code>AutoScroll</code>；快速啟動卡改「按鈕＋三個勾選疊左、說明右（Dock Fill 換行）」；診斷頁狀態改 TLP；預覽太小不畫標籤</td></tr><tr><td>logo</td><td><code>tools/make_logo.py</code>（PIL 直畫＋SVG 同幾何）→ <code>docs/assets/logo.svg</code>、<code>logo-256/512.png</code>、<code>logo-banner(-dark).png</code>、<code>Resources/app.ico</code>（16–256 七尺寸，舊 ico 備份在 scratchpad）；README <code>&lt;picture&gt;</code> 淺深自動切</td></tr><tr><td>保險版</td><td>Release <code>v8.69-legacy</code>（從 v8.69 原始碼建置，pre-release，不搶 latest）：worktree 建置、資產 <code>TouchpadTapRight-v8.69-legacy-win-x64.exe</code>；v8.71 用 <code>gh release edit --latest</code> 設回 latest</td></tr><tr><td>文件</td><td><code>README.md</code> 全文重寫（使用前須知 7 條、config 表、自啟原理、版本說明）；<code>docs/測試指南.md</code>；<code>.github/ISSUE_TEMPLATE/bug_report.md</code>；<code>tools/產生交接網頁.py</code> DOCS 加測試指南</td></tr></tbody></table></div>
-<h4 id="d2-7">驗證方式</h4>
+<h4 id="d2-8">驗證方式</h4>
 <ul>
 <li><code>dotnet build -c Release</code>（net9.0）：0 警告 0 錯誤。</li>
 <li>快測腳本（<code>smoke3.ps1</code>，UIA＋Win32 訊息，<code>PrintWindow</code> 只抓程式視窗）實跑 bin exe：</li>
@@ -446,17 +445,17 @@ docs/
 </ul>
 <hr>
 </div></details>
-<details class="chap"><summary id="d2-8"><span class="ct">2026-08-17　v8.71：寫檔日誌＋改名 TouchpadTapRight＋UI 翻新（無障礙）</span></summary><div class="cbody">
-<h4 id="d2-9">決策</h4>
+<details class="chap"><summary id="d2-9"><span class="ct">2026-08-17　v8.71：寫檔日誌＋改名 TouchpadTapRight＋UI 翻新（無障礙）</span></summary><div class="cbody">
+<h4 id="d2-10">決策</h4>
 <ul>
 <li><strong>日誌用純文字檔，不用 DB</strong>：<code>%LOCALAPPDATA%\TouchpadTapRight\logs\app.log</code>，1 MB 轉 <code>app.1.log</code> 只留兩份。理由：.NET 沒內建 SQLite（要 NuGet＋native dll、單檔 exe 更大）、使用者要能直接打開／貼給支援者、沒有查詢需求。只寫 Normal 級以上狀態訊息（Verbose/Debug 的逐筆座標在 <code>TouchpadMonitor.UpdateStatus(msg, level)</code> 就被 <code>_diagnosticLevel</code> 擋掉，進不了寫檔那條），連續相同訊息壓成「×N」（每 100 次先落地一行）；<strong>寫檔在背景執行緒</strong>——呼叫端可能是 WH_MOUSE_LL 回呼，同步 IO 會踩 LowLevelHooksTimeout 被拔鉤子（反對者抓的）；用 LocalApplicationData 不用 Roaming（網域機器可能是網路路徑）；滾動失敗只跳過不停用，連續 20 次 IO 失敗才關閉。啟動寫一行環境快照（版本／Windows build／.NET／是否管理員），HID descriptor 隨「HID API 動態初始化成功」那則訊息進來。</li>
 <li><strong>改名 TouchpadTapRight ／ 觸控板輕觸右鍵</strong>（使用者選）：GitHub repo <code>nec789tw/touchpad-right-click</code> → <code>touchpad-tap-right</code>（GitHub 自動 redirect，含 API，v8.70 的 exe 檢查更新照樣通）；exe 檔名 <code>TouchpadTapRight.exe</code>（ASCII，Release 資產 <code>TouchpadTapRight-vX.YY-win-x64.exe</code>）；單一實例 Mutex 名改 <code>TouchpadTapRight_SingleInstance</code>。<strong>C# namespace 與資料夾 <code>CSharp/TouchpadRightClick</code> 不改</strong>——對使用者零價值、動 20 幾個檔。本機資料夾名「觸控盤右鍵」是錯字（應為「板」），改動會影響工作目錄，留給使用者決定。</li>
 <li><strong>UI 走 WinForms 翻新＋無障礙強化</strong>（使用者選，非 WPF 重寫）：色票／字級／尺寸集中 <code>UI/Theme.cs</code>，深色模式跟隨 Windows「應用程式模式」（含 DWM 深色標題列），版面全部 Dock／TableLayoutPanel 百分比，<code>AutoScaleMode.Dpi</code>，預覽隨視窗縮放保持 2:1 並畫出邊緣保護帶。TabControl 換成兩顆大導覽按鈕（WinForms TabControl 無法上色、點擊區小）。移除唯讀的「HID API 模式」RadioButton（假選項）。</li>
 <li><strong>「兩台觸控板同時活動」待辦刪除</strong>（使用者：多餘）。程式碼裡的 hDevice 綁定機制保留——它防的是睡眠喚醒後 hDevice 換號與多 collection 韌體，成本 3 行。</li>
 </ul>
-<h4 id="d2-10">程式碼證據</h4>
+<h4 id="d2-11">程式碼證據</h4>
 <div class="tw"><table><thead><tr><th>項目</th><th>檔案</th></tr></thead><tbody><tr><td>寫檔日誌</td><td><code>Utils/FileLogger.cs</code>（<code>Write</code> :29 重複抑制、<code>WriteStartupSnapshot</code> :46、<code>MAX_BYTES</code> :17）；掛點 <code>Core/TouchpadMonitor.cs:470</code> <code>UpdateStatus(string)</code>、<code>Program.cs:28/30/71/81</code>（啟動快照、ThreadException、啟動失敗、Shutdown）；UI 按鈕 <code>UI/ModernMainForm.cs</code> <code>OpenLogFolder_Click</code></td></tr><tr><td>改名</td><td><code>TouchpadRightClick.csproj</code> <code>&lt;AssemblyName&gt;TouchpadTapRight&lt;/AssemblyName&gt;</code> <code>&lt;Version&gt;8.71&lt;/Version&gt;</code>；<code>Utils/UpdateChecker.cs:15</code> <code>Repo</code>；<code>Program.cs:17</code> Mutex；<code>.github/workflows/release.yml:39/43</code>；<code>README.md</code>、<code>CLAUDE.md</code>、<code>docs/</code>、<code>tools/產生交接網頁.py</code> 品牌字串</td></tr><tr><td>Theme</td><td><code>UI/Theme.cs</code>：<code>Dark</code> :17（登錄檔 AppsUseLightTheme；`TAPRIGHT_THEME=dark</td><td>light<code> 測試鉤子 :154）、</code>ButtonHeight=44<code> :55、</code>MakeButton<code> :61、</code>ApplyTitleBar` :141</td></tr><tr><td>版面</td><td><code>UI/ModernMainForm.cs</code>：<code>AutoScaleMode.Dpi</code> :113、<code>OnLoad</code> 夾進工作區 :97、<code>BuildNav</code> :162、<code>BuildSettingRow</code> :318（數字框↔滑桿雙向同步、AccessibleName、TabIndex）、所有按鈕有 <code>(&amp;X)</code> 快捷鍵與 AccessibleName（例 :549）</td></tr><tr><td>預覽</td><td><code>UI/SimpleTouchpadPreview.cs</code>：<code>EdgeLeft/Right/Top</code> :23-25（由 <code>InitializeMonitor</code> 從 TapZoneDetector 帶入）、<code>PadRect</code> :85 置中 2:1、<code>HatchBrush</code> 邊緣帶 :119</td></tr><tr><td>順手修</td><td><code>Core/TouchpadMonitor.cs</code> Start() 的過時提示「輕觸兩次…Double-Tap-and-Hold」改成實際行為（用 <code>TapZoneDetector.DragHoldThresholdMs</code>）</td></tr></tbody></table></div>
-<h4 id="d2-11">驗證方式</h4>
+<h4 id="d2-12">驗證方式</h4>
 <ul>
 <li><code>dotnet build -c Release</code>：0 警告 0 錯誤。</li>
 <li>快測腳本實跑 publish 的單檔 exe：歡迎框→確定→主視窗 <code>v8.71</code>→開始／停止監控→檢查更新（帶 token，顯示「已是最新版本 v8.71」，因為 8.71 &gt; Release 的 8.70）→關閉。<code>%LOCALAPPDATA%\TouchpadTapRight\logs\app.log</code> 產生，內容：啟動快照、鉤子啟動、監控啟動／停止、檢查更新結果、結束。</li>
@@ -469,8 +468,8 @@ docs/
 </ul>
 <hr>
 </div></details>
-<details class="chap"><summary id="d2-12"><span class="ct">2026-08-17　v8.70：review 修正＋檢查更新＋自動發布＋交接手冊</span></summary><div class="cbody">
-<h4 id="d2-13">決策</h4>
+<details class="chap"><summary id="d2-13"><span class="ct">2026-08-17　v8.70：review 修正＋檢查更新＋自動發布＋交接手冊</span></summary><div class="cbody">
+<h4 id="d2-14">決策</h4>
 <ul>
 <li><strong>版本單一來源</strong> = <code>CSharp/TouchpadRightClick/TouchpadRightClick.csproj</code> <code>&lt;Version&gt;8.70&lt;/Version&gt;</code>。視窗標題（<code>UI/ModernMainForm.cs:93</code>）、檢查更新（<code>Utils/UpdateChecker.cs</code>）、硬體診斷報告標頭（<code>Core/TouchpadMonitor.cs</code> GetHardwareDiagnosticReport）、Release 資產名、Actions 的 tag 檢查全部讀它。發新版：改這一行 → commit → <code>git tag vX.YY</code> → push。</li>
 <li><strong>發布機制</strong> = GitHub Releases。<code>.github/workflows/release.yml</code>：推 <code>v*</code> tag → windows-latest <code>dotnet publish</code> → 上傳 <code>TouchpadRightClick-vX.YY-win-x64.exe</code>（ASCII 檔名，<code>releases/latest/download/…</code> 網址穩定）。tag 與 csproj 版本不一致 workflow 直接失敗。</li>
@@ -479,20 +478,20 @@ docs/
 <li><strong>repo 先不 public</strong>：使用者要先實機測完（見未完成總表<span class="sev sev-hi">高</span>）。</li>
 <li>README 不寫「癱瘓在床」——身障者狀況不一，只描述共通操作限制（使用者指示）。</li>
 </ul>
-<h4 id="d2-14">Code review（Workflow：5 面向 finders → 每條 2 個反對者驗證）</h4>
+<h4 id="d2-15">Code review（Workflow：5 面向 finders → 每條 2 個反對者驗證）</h4>
 <p>32 條原始 finding → 去重 21 → <strong>確認 14（去重後 11 個獨立問題）</strong>、爭議 2、推翻 5。已修：</p>
 <div class="tw"><table><thead><tr><th>#</th><th>問題</th><th>修法</th><th>證據</th></tr></thead><tbody><tr><td>1</td><td>A2 <code>CheckTouchEnd</code> 在 ThreadPool 跑，與 UI 執行緒的 <code>ProcessRawInput</code> 對 <code>TapZoneDetector</code>／<code>_last*</code> 無同步</td><td>改用 WinForms <code>Timer</code>（在建立 NativeWindow 的 UI 執行緒 Tick），刪 <code>_timerLock</code> 與 ObjectDisposedException 補救；WM_TIMER 早到一格（15.6ms）直接算到期</td><td><code>Core/TouchpadMonitor.cs:47</code>、<code>:375</code>、<code>:386</code></td></tr><tr><td>2</td><td>拖曳中 <code>Stop()</code>／關視窗不送 LeftUp，系統左鍵卡住；<code>TapZoneDetector</code>／<code>GlobalMouseHook</code> 拖曳旗標跨 Stop/Start 殘留</td><td><code>TapZoneDetector.Reset()</code>（拖曳中會觸發 DragEnded → LeftUp）；<code>Stop()</code> 呼叫它並 <code>SetDraggingMode(false)</code>；FormClosing 改呼叫 <code>_monitor.Dispose()</code>（內含 Stop）</td><td><code>Core/TapZoneDetector.cs:132</code>、<code>Core/TouchpadMonitor.cs:151</code>、<code>UI/ModernMainForm.cs:72</code></td></tr><tr><td>3</td><td>從右下角起手的普通游標移動 &gt;600ms 被當拖曳，送 LeftDown 框選桌面</td><td>進入拖曳加 <code>_maxDistance &lt; DRAG_MOVE_TOLERANCE</code>（6%，獨立常數；反對者指出借用 2% 輕觸閾值會讓手抖使用者進不了拖曳）</td><td><code>Core/TapZoneDetector.cs:28</code>、<code>:254</code></td></tr><tr><td>4</td><td>未依 hDevice 過濾 WM_INPUT，第二台裝置的 report 用第一台的 descriptor 解</td><td>綁定裝置活著時忽略他機 report；靜默 &gt;2s 才對新 hDevice 重新初始化（反對者指出「每筆重綁」在雙 collection 硬體上會 ping-pong）；沒有 preparsed data 就不解析（NULL 進 hid.dll 是 AccessViolation）；<code>HidApiParser.Initialize</code> 可重入、<code>Invalidate()</code> 配合釋放。<code>Stop()</code> <strong>不</strong>釋放 preparsed data（停止後硬體檢測還要用）</td><td><code>Core/TouchpadMonitor.cs:241</code>、<code>:275</code>、<code>ReleasePreparsedData()</code>、<code>Core/HidApiParser.cs:178</code></td></tr><tr><td>5</td><td>dwCount&gt;1 時多筆 report 串成一個 byte[] 丟 <code>HidP_GetUsageValue</code>，整批失敗</td><td>逐筆切 <code>dwSizeHid</code> 呼叫 <code>HandleReport</code></td><td><code>Core/TouchpadMonitor.cs:285</code>、<code>HandleReport</code></td></tr><tr><td>6</td><td>預防性左鍵抑制的區域判定沒含邊緣保護，右邊緣 4% 帶「不右鍵、左鍵又被吞」</td><td><code>TapZoneDetector.IsInRightClickZone(x,y)</code> 共用判定</td><td><code>Core/TapZoneDetector.cs:122</code>、<code>Core/TouchpadMonitor.cs:344</code></td></tr><tr><td>7</td><td><code>Monitor_TouchEvent</code> 每筆事件塞 <code>_diagnosticBuffer</code> 無上限，停在基本設定頁不 drain</td><td>超過 <code>DIAGNOSTIC_BUFFER_MAX_SIZE</code> 丟前半段（不整個 Clear，免得吞掉狀態訊息）</td><td><code>UI/ModernMainForm.cs:938</code></td></tr><tr><td>8</td><td>啟動失敗時 <code>_enableCheckBox</code> 仍勾選，取消勾選也無反應</td><td>失敗分支還原 <code>Checked=false</code></td><td><code>UI/ModernMainForm.cs:812</code></td></tr><tr><td>9</td><td>預覽把 RightZoneStartX 夾在 0.9，但滑桿到 92，畫錯位置</td><td>拿掉 clamp</td><td><code>UI/SimpleTouchpadPreview.cs:27</code></td></tr><tr><td>10</td><td><code>GetRawInputDeviceInfo</code> 失敗回 (UINT)-1，<code>&gt; 0</code> 恆真</td><td>轉 <code>int</code> 再比</td><td><code>Core/TouchpadMonitor.cs:263</code></td></tr><tr><td>11</td><td><code>OnTapDetected</code> 直接解參考 <code>_globalMouseHook</code>（Dispose 後為 null）</td><td><code>?.</code></td><td><code>Core/TouchpadMonitor.cs</code> OnTapDetected</td></tr></tbody></table></div>
 <p>爭議 2 條的處置：<code>RAWINPUT</code> <code>FieldOffset(24)</code> 寫死 x64——csproj 鎖 win-x64，加註解不改（<code>Core/TouchpadMonitor.cs</code> Win32 API 區）。</p>
 <p><strong>第二輪：fresh-context 反對者審查我的 diff</strong>（<code>opus</code>，讀 diff＋改後全檔＋備份對照）抓到 4 條必修、7 條建議，已修：M1 NULL preparsed data 進 hid.dll（新引入，加守衛＋<code>Invalidate()</code>）、M2 hDevice ping-pong（改「靜默 2s 才重綁」）、M3 拖曳閾值借用輕觸閾值（改獨立常數 6%）、M4 <code>Stop()</code> 釋放 preparsed data 害硬體檢測失效（拿掉）；S1 WM_TIMER 早到容差、S3 <code>UpdateChecker.Current</code> 保留 Build、S4 catch 內 <code>IsDisposed</code> 守衛、S5 緩衝丟半段、S6 credits Anchor。S2（UI 忙碌影響離手偵測）與 S7（預覽沒畫邊緣保護帶）列入未完成總表<span class="sev sev-lo">低</span>。反對者驗證沒問題的：<code>Timer</code> 解析為 WinForms Timer 且 Tick 在 UI 執行緒、rawDataOffset 與原 +8 相同、Reset 事件順序與 LeftUp 不被自家鉤子攔、<code>&lt;Version&gt;8.70&lt;/Version&gt;</code> 產生 AssemblyVersion 8.70.0.0（讀 obj/ AssemblyInfo 確認）、release.yml tag 檢查與中文檔名在 <code>pwsh</code> 下可行。 被推翻 5 條（<code>_globalMouseHook</code> NRE 路徑不可達、Unhook 失敗、Timer Dispose 競態、volatile 寫入順序、positionNotChanging 提前判定）不處理，其中 Timer 相關的兩條在改用 WinForms Timer 後本來就消失。</p>
 <p>未修但已列入未完成總表：Tip Switch 是 button caps 讀不到（<span class="sev sev-mid">中</span>）、多 slot X/Y 取法（<span class="sev sev-lo">低</span>）、兩台觸控板同時活動只服務先綁定那台（<span class="sev sev-lo">低</span>）。</p>
 <p>順手清理：<code>Utils/HidDiagnostic.cs</code> 刪掉沒人呼叫的 <code>GenerateReport</code>／<code>TryReadAllCoordinates</code>（原本還帶著寫死的 v8.53 字串）。</p>
-<h4 id="d2-15">新功能</h4>
+<h4 id="d2-16">新功能</h4>
 <ul>
 <li><strong>檢查更新</strong>：<code>Utils/UpdateChecker.cs</code>（GET releases/latest → 比 tag 與 AssemblyVersion 的 Major.Minor.Build）；按鈕在主畫面標題列右上（<code>UI/ModernMainForm.cs</code> <code>UpdateButton_Click</code>）。三條路徑：已最新／有新版→YesNo 開瀏覽器／失敗→顯示原因＋手動連結。repo 公開前用 <code>GITHUB_TOKEN</code> 環境變數測。</li>
 <li><strong>自動發布</strong>：<code>.github/workflows/release.yml</code>。</li>
 <li><strong>交接手冊</strong>：<code>tools/產生交接網頁.py</code>（從通用模組複製，只改 DOCS 與品牌字串）→ <code>docs/交接手冊.html</code>。</li>
 </ul>
-<h4 id="d2-16">驗證方式</h4>
+<h4 id="d2-17">驗證方式</h4>
 <ul>
 <li><code>dotnet build -c Release</code>：0 警告 0 錯誤。</li>
 <li>本機 publish 後用 UIAutomation／Win32 訊息驅動的快測腳本實跑：歡迎對話框→按確定→主視窗標題 <code>v8.70</code>→按「開始監控」（無觸控板也能註冊 Raw Input）→出現「停止監控」→按下→回到「開始監控」→按「檢查更新」→（repo private、無 token）顯示 404 錯誤訊息＋手動連結→按鈕恢復可用→WM_CLOSE 乾淨結束。有 token 的「已最新」與 <code>-p:Version=8.60</code> 建置的「有新版」路徑在 Release 建好後再測（見下）。</li>
@@ -502,7 +501,7 @@ docs/
 </ul>
 <hr>
 </div></details>
-<details class="chap"><summary id="d2-17"><span class="ct">2026-08 之前　v8.69 及更早</span></summary><div class="cbody">
+<details class="chap"><summary id="d2-18"><span class="ct">2026-08 之前　v8.69 及更早</span></summary><div class="cbody">
 <p>見 <a href="../CLAUDE.md">CLAUDE.md</a> 開發日誌。摘要：v8.69 大規模清理（A1 Stop 釋放資源、A3/A4 Form 關閉防 ObjectDisposedException、A5 Dispose Pattern、A7 SendInput、刪 9 個 orphan 檔＋dead code、統一預設值到 TapZoneDetector 常數）；v8.64 Magic Numbers／長方法拆分；v8.63 Handle 洩漏；v8.61 Timer 鎖與 volatile。</p>
 </div></details></div></section>
 <section class="doc" id="d3" data-title="社群測試指南"><header class="dh"><div><h2>社群測試指南</h2><p class="dd">沒實機時靠社群回報的 7 步測法與回報方式</p></div><div class="meta"><code>docs/測試指南.md</code><span>更新 2026-08-17 21:11</span></div></header><nav class="subnav"><a class="sub l2" href="#d3-1">事前</a><a class="sub l2" href="#d3-2">7 個動作（照順序，每個至少 3 次）</a><a class="sub l2" href="#d3-3">回報</a><a class="sub l2" href="#d3-4">常見狀況怎麼判讀（給回報者參考，不用自己修）</a></nav><div class="body"><h2 id="d3-0">社群測試指南（v8.72）</h2>
@@ -609,24 +608,22 @@ dotnet publish -c Release -r win-x64 --self-contained true `
   -p:PublishSingleFile=true `
   -p:EnableCompressionInSingleFile=true</code></pre>
 </div></details></div></section>
-<section class="doc" id="d5" data-title="開發日誌"><header class="dh"><div><h2>開發日誌</h2><p class="dd">各版本改了什麼、為什麼、開發規範</p></div><div class="meta"><code>CLAUDE.md</code><span>更新 2026-08-18 00:44</span></div></header><nav class="subnav"><a class="sub l2" href="#d5-1">v8.72 開源釋出版：設定檔＋開機自啟＋.NET 9 深色＋logo＋保險版＋測試指南 (程式碼完成，觸控行為交社群 ⏳)</a><a class="sub l2" href="#d5-2">v8.71 寫檔日誌＋改名 TouchpadTapRight＋UI 翻新 (程式碼完成，UI 已截圖驗證，觸控行為待實機 ⏳)</a><a class="sub l2" href="#d5-3">v8.70 review 修正＋檢查更新＋自動發布 (程式碼完成，觸控行為待實機驗證 ⏳)</a><a class="sub l2" href="#d5-4">v8.69 大規模代碼清理 (已完成 ✅)</a><a class="sub l3" href="#d5-5">📋 概述</a><a class="sub l3" href="#d5-6">已完成</a><a class="sub l3" href="#d5-7">待做</a><a class="sub l2" href="#d5-8">v8.64 代碼品質改進計劃 (已完成 ✅)</a><a class="sub l3" href="#d5-9">📋 計劃概述</a><a class="sub l3" href="#d5-10">🎯 四大改進項目 (全部完成)</a><a class="sub l3" href="#d5-11">1️⃣ Magic Numbers 重構 (最高優先級) ✅</a><a class="sub l3" href="#d5-12">2️⃣ CreateControlPanel 長方法重構 (次要優先級) ✅</a><a class="sub l3" href="#d5-13">3️⃣ InvokeRequired 代碼重複消除 (第三優先級) ✅</a><a class="sub l3" href="#d5-14">4️⃣ String 效能優化 (第四優先級) ✅</a><a class="sub l3" href="#d5-15">📈 實際效益</a><a class="sub l2" href="#d5-16">v8.63 Handle 資源洩漏修復 (已完成)</a><a class="sub l3" href="#d5-17">🐛 問題描述</a><a class="sub l3" href="#d5-18">✅ 修復內容</a><a class="sub l3" href="#d5-19">📊 影響</a><a class="sub l2" href="#d5-20">v8.62 HidApiParser 重構 (已完成)</a><a class="sub l3" href="#d5-21">♻️ 重構內容</a><a class="sub l2" href="#d5-22">v8.61 穩定性強化 (已完成)</a><a class="sub l3" href="#d5-23">🐛 修復內容</a><a class="sub l2" href="#d5-24">開發規範</a><a class="sub l3" href="#d5-25">版本號規範</a><a class="sub l3" href="#d5-26">文件更新原則</a><a class="sub l3" href="#d5-27">代碼品質標準</a></nav><div class="foldbar"><button data-fold="open">展開全部</button><button data-fold="close">收合全部</button></div><div class="body"><h2 id="d5-0">專案開發日誌</h2>
+<section class="doc" id="d5" data-title="開發日誌"><header class="dh"><div><h2>開發日誌</h2><p class="dd">各版本改了什麼、為什麼、開發規範</p></div><div class="meta"><code>CLAUDE.md</code><span>更新 2026-10-21 13:18</span></div></header><nav class="subnav"><a class="sub l2" href="#d5-1">v8.72 開源釋出版：設定檔＋開機自啟＋.NET 9 深色＋logo＋保險版＋測試指南 (程式碼完成，觸控行為交社群 ⏳)</a><a class="sub l2" href="#d5-2">v8.71 寫檔日誌＋改名 TouchpadTapRight＋UI 翻新 (程式碼完成，UI 已截圖驗證，觸控行為待實機 ⏳)</a><a class="sub l2" href="#d5-3">v8.70 review 修正＋檢查更新＋自動發布 (程式碼完成，觸控行為待實機驗證 ⏳)</a><a class="sub l2" href="#d5-4">v8.69 大規模代碼清理 (已完成 ✅)</a><a class="sub l2" href="#d5-5">開發規範</a><a class="sub l3" href="#d5-6">版本與紀錄</a><a class="sub l3" href="#d5-7">代碼品質標準</a></nav><div class="body"><h2 id="d5-0">專案開發日誌</h2>
 <p>架構說明見 <a href="docs/architecture.md">docs/architecture.md</a>。 <strong>接手請先開 <a href="docs/交接手冊.html">docs/交接手冊.html</a></strong>（由 <code>tools/產生交接網頁.py</code> 從 md 產生，不要手改 HTML）； 還有什麼沒做看 <a href="docs/未完成盤點總表.md">docs/未完成盤點總表.md</a>，做了什麼看 <a href="docs/工作狀態.md">docs/工作狀態.md</a>。</p>
-<details class="chap"><summary id="d5-1"><span class="ct">v8.72 開源釋出版：設定檔＋開機自啟＋.NET 9 深色＋logo＋保險版＋測試指南 (程式碼完成，觸控行為交社群 ⏳)</span></summary><div class="cbody">
+<h3 id="d5-1">v8.72 開源釋出版：設定檔＋開機自啟＋.NET 9 深色＋logo＋保險版＋測試指南 (程式碼完成，觸控行為交社群 ⏳)</h3>
 <ul>
 <li><code>%LOCALAPPDATA%\TouchpadTapRight\config.json</code>（<code>Utils/AppSettings.cs</code>）：滑桿持久化＋進階門檻（拖曳容差／長按／輕觸／離手／邊緣）全部可調。</li>
 <li>開機自啟（<code>Utils/AutoStart.cs</code>，schtasks ONLOGON HIGHEST）＋「啟動後自動開始監控」。<strong>成功路徑本機沙箱無法測</strong>（Access denied），交社群。</li>
 <li>.NET 9 + <code>SetColorMode</code>：原生控制項跟著深色。logo：<code>tools/make_logo.py</code>。Release <code>v8.69-legacy</code> 當基準（pre-release）。</li>
 <li>決策：不買憑證、不做實驗性 Tip Switch、實機驗證交社群。細目 <code>docs/工作狀態.md</code>。</li>
 </ul>
-</div></details>
-<details class="chap"><summary id="d5-2"><span class="ct">v8.71 寫檔日誌＋改名 TouchpadTapRight＋UI 翻新 (程式碼完成，UI 已截圖驗證，觸控行為待實機 ⏳)</span></summary><div class="cbody">
+<h3 id="d5-2">v8.71 寫檔日誌＋改名 TouchpadTapRight＋UI 翻新 (程式碼完成，UI 已截圖驗證，觸控行為待實機 ⏳)</h3>
 <ul>
 <li>對外名稱 <strong>TouchpadTapRight ／ 觸控板輕觸右鍵</strong>：repo <code>nec789tw/touchpad-tap-right</code>、exe <code>TouchpadTapRight.exe</code>、Release 資產 <code>TouchpadTapRight-vX.YY-win-x64.exe</code>。C# namespace／資料夾維持 <code>TouchpadRightClick</code>。</li>
 <li>寫檔日誌 <code>Utils/FileLogger.cs</code> → <code>%LOCALAPPDATA%\TouchpadTapRight\logs\app.log</code>（只記狀態事件，不記逐筆座標；1 MB 滾動）。進階診斷頁「開啟日誌資料夾」。</li>
 <li>UI：<code>UI/Theme.cs</code> 色票／深色模式／44px 按鈕／圓角；<code>ModernMainForm</code> 改百分比版面＋<code>AutoScaleMode.Dpi</code>＋AccessibleName＋Alt 快捷鍵；預覽響應式並畫邊緣保護帶。細目見 <code>docs/工作狀態.md</code>。</li>
 </ul>
-</div></details>
-<details class="chap"><summary id="d5-3"><span class="ct">v8.70 review 修正＋檢查更新＋自動發布 (程式碼完成，觸控行為待實機驗證 ⏳)</span></summary><div class="cbody">
+<h3 id="d5-3">v8.70 review 修正＋檢查更新＋自動發布 (程式碼完成，觸控行為待實機驗證 ⏳)</h3>
 <ul>
 <li>版本單一來源：csproj <code>&lt;Version&gt;</code>（視窗標題／檢查更新／Release 資產名都讀它）。發新版＝改這行 → tag 同號 → push。</li>
 <li>檢查更新按鈕（<code>Utils/UpdateChecker.cs</code>）：比對 GitHub Releases 最新 tag，有新版開瀏覽器到下載頁。</li>
@@ -634,164 +631,26 @@ dotnet publish -c Release -r win-x64 --self-contained true `
 <li>Code review 修 11 個確認的 bug（含 A2：觸控結束偵測改 WinForms Timer，回到 UI 執行緒）。細目與證據見 <code>docs/工作狀態.md</code>。</li>
 <li>⚠️ 開發機無觸控板；觸控路徑改動的實機驗證有限，公開後靠社群回報（<code>docs/未完成盤點總表.md</code><span class="sev sev-hi">高</span>）。</li>
 </ul>
-</div></details>
-<details class="chap"><summary id="d5-4"><span class="ct">v8.69 大規模代碼清理 (已完成 ✅)</span></summary><div class="cbody">
-<h4 id="d5-5">📋 概述</h4>
-<p>純修繕版本,不改變任何功能邏輯。修復 4 個 bug、刪除 ~1,600 行死碼、更新全部文件。</p>
-<h4 id="d5-6">已完成</h4>
-<ul>
-<li>✅ A1: Stop() 完整釋放資源 (RIDEV_REMOVE + 鉤子 + Timer)</li>
-<li>✅ A3+A4: Form 關閉時防止 ObjectDisposedException</li>
-<li>✅ A5: 加入 Finalizer + 標準 Dispose Pattern</li>
-<li>✅ A7: MouseSimulator 改用 SendInput,移除 Thread.Sleep</li>
-<li>✅ B1-B8: 刪除 9 個 orphan 檔案 + 1 個 dead method + 1 個 dead field</li>
-<li>✅ D1: 清除 168 個 v8.xx 歷史註解</li>
-<li>✅ D3: 統一預設值到 TapZoneDetector 常數</li>
-<li>✅ D5: Mutex 明確釋放</li>
-<li>✅ openspec/ 整合為 docs/architecture.md</li>
-<li>✅ 註解與文件措辭清理</li>
-</ul>
-<h4 id="d5-7">待做</h4>
-<ul>
-<li>✅ A2: CheckTouchEnd 競態條件 → v8.70 改 WinForms Timer（待實機驗證）</li>
-<li>⏳ C1–C4 移到 <a href="docs/未完成盤點總表.md">docs/未完成盤點總表.md</a>（那份才是權威清單，附證據）</li>
-</ul>
+<h3 id="d5-4">v8.69 大規模代碼清理 (已完成 ✅)</h3>
+<p>純修繕、不改功能：修 4 個 bug（<code>Stop()</code> 完整釋放 RIDEV_REMOVE＋鉤子＋Timer、Form 關閉防 ObjectDisposedException、標準 Dispose Pattern、<code>MouseSimulator</code> 改 SendInput），刪 ~1,600 行死碼與 168 個版本註解，預設值統一到 <code>TapZoneDetector</code> 常數，openspec/ 併入 <code>docs/architecture.md</code>。剩下的 C1–C4 在 <a href="docs/未完成盤點總表.md">docs/未完成盤點總表.md</a>。</p>
 <hr>
-</div></details>
-<details class="chap"><summary id="d5-8"><span class="ct">v8.64 代碼品質改進計劃 (已完成 ✅)</span></summary><div class="cbody">
-<h4 id="d5-9">📋 計劃概述</h4>
-<p>本版本專注於代碼品質改進,提升可讀性、可維護性和效能。</p>
-<h4 id="d5-10">🎯 四大改進項目 (全部完成)</h4>
-<h5 id="d5-11">1️⃣ Magic Numbers 重構 (最高優先級) ✅</h5>
-<p><strong>問題</strong>: 魔術數字散佈在多個檔案中,缺乏語義化命名</p>
-<p><strong>完成內容</strong>:</p>
+<h3 id="d5-5">開發規範</h3>
+<h4 id="d5-6">版本與紀錄</h4>
 <ul>
-<li>TapZoneDetector.cs: 提取 8 個命名常數 (TAP_TIME_MS, DRAG_HOLD_THRESHOLD_MS 等)</li>
-<li>TouchpadMonitor.cs: 提取 4 個命名常數 (RIGHT_CLICK_SUPPRESS_WINDOW_MS 等)</li>
-<li>ModernMainForm.cs: 提取 3 個命名常數 (DIAGNOSTIC_UPDATE_INTERVAL_MS 等)</li>
-<li>共計 15 個魔術數字全部轉換為語義化常數</li>
+<li>版本號單一來源：csproj <code>&lt;Version&gt;</code>；發新版＝改這行＋打同號 tag（<code>release.yml</code> 會檢查兩者一致）。</li>
+<li>對外版本紀錄寫 README「版本說明」表；細節與程式碼證據寫 <code>docs/工作狀態.md</code>；未完成寫 <code>docs/未完成盤點總表.md</code>。改完 md 重跑 <code>tools/產生交接網頁.py</code>，跟程式碼放同一個 commit。</li>
+<li><strong>不另維護 CHANGELOG</strong>（2026-10-21 刪除；v8.69 以前的舊日誌：<code>git show 556c15f:CSharp/TouchpadRightClick/CHANGELOG.md</code>）。</li>
+<li><strong>程式碼裡不寫版本註解</strong>（<code>// v8.xx: …</code>）：v8.69 清掉過 168 個；改了什麼看 git 與 <code>docs/工作狀態.md</code>。</li>
+<li>重大變更要更新本檔。</li>
 </ul>
-<p><strong>成果</strong>: 代碼可讀性大幅提升,參數調整更簡單明確</p>
-<h5 id="d5-12">2️⃣ CreateControlPanel 長方法重構 (次要優先級) ✅</h5>
-<p><strong>問題</strong>: ModernMainForm.CreateControlPanel 方法長達 169 行</p>
-<p><strong>完成內容</strong>:</p>
+<h4 id="d5-7">代碼品質標準</h4>
 <ul>
-<li>拆分為 4 個方法: CreateControlPanel (主方法), CreateRightZoneControls, CreateSensitivityControls, CreateVerticalSplitControls</li>
-<li>消除重複的 NumericUpDown + TrackBar 建立模式</li>
-<li>每個方法職責單一,長度控制在 60 行以內</li>
-</ul>
-<p><strong>成果</strong>: 代碼組織清晰,易於理解和維護</p>
-<h5 id="d5-13">3️⃣ InvokeRequired 代碼重複消除 (第三優先級) ✅</h5>
-<p><strong>問題</strong>: 3 個事件處理器有相同的跨執行緒呼叫模式</p>
-<p><strong>完成內容</strong>:</p>
-<ul>
-<li>建立通用輔助方法 <code>InvokeIfRequired(Action action)</code></li>
-<li>重構 Monitor_TouchEvent, Monitor_TapDetected, Monitor_StatusUpdate</li>
-<li>統一跨執行緒 UI 更新模式</li>
-</ul>
-<p><strong>成果</strong>: 消除代碼重複,維護更簡單,一致性更好</p>
-<h5 id="d5-14">4️⃣ String 效能優化 (第四優先級) ✅</h5>
-<p><strong>問題</strong>: 高頻率字串插值造成 GC 壓力</p>
-<p><strong>完成內容</strong>:</p>
-<ul>
-<li>Monitor_TouchEvent: 字串插值改為 String.Format</li>
-<li>Monitor_StatusUpdate: 字串插值改為直接使用 StringBuilder.Append</li>
-<li>減少臨時字串對象的分配</li>
-</ul>
-<p><strong>成果</strong>: 高頻觸控事件處理效能提升,GC 壓力降低</p>
-<h4 id="d5-15">📈 實際效益</h4>
-<ul>
-<li>✅ 代碼可讀性提升 30%+</li>
-<li>✅ 代碼重複減少 40%+</li>
-<li>✅ 維護成本降低</li>
-<li>✅ 長時間運行效能改善</li>
-<li>✅ 編譯成功,無錯誤</li>
-</ul>
-<hr>
-</div></details>
-<details class="chap"><summary id="d5-16"><span class="ct">v8.63 Handle 資源洩漏修復 (已完成)</span></summary><div class="cbody">
-<h4 id="d5-17">🐛 問題描述</h4>
-<p>TouchInputMonitor.ProcessTouchInput 方法中,<code>GetTouchInputInfo</code> 檢查失敗時提前 return,導致 finally 區塊未執行,Handle 未釋放。</p>
-<h4 id="d5-18">✅ 修復內容</h4>
-<p>將驗證邏輯移入 try 區塊內,確保 finally 總是執行:</p>
-<pre><code>// v8.63: 將檢查移入 try 區塊,確保 finally 一定執行
-try
-{
-    if (!GetTouchInputInfo(lParam, inputCount, inputs, Marshal.SizeOf(typeof(TOUCHINPUT))))
-    {
-        // 無法取得觸控資訊,但 finally 仍會執行釋放 Handle
-        return;
-    }
-    // ... 處理觸控事件
-}
-finally
-{
-    // v8.63: 確保 Handle 總是被釋放,防止資源洩漏
-    CloseTouchInputHandle(lParam);
-}</code></pre>
-<h4 id="d5-19">📊 影響</h4>
-<ul>
-<li>防止長時間運行時系統資源耗盡</li>
-<li>提升程式穩定性</li>
-</ul>
-<hr>
-</div></details>
-<details class="chap"><summary id="d5-20"><span class="ct">v8.62 HidApiParser 重構 (已完成)</span></summary><div class="cbody">
-<h4 id="d5-21">♻️ 重構內容</h4>
-<ul>
-<li>提取 <code>ValidateInput</code> 方法進行輸入驗證</li>
-<li>提取 <code>CoordinateData</code> 結構封裝座標資料</li>
-<li>改善代碼組織和可讀性</li>
-</ul>
-<hr>
-</div></details>
-<details class="chap"><summary id="d5-22"><span class="ct">v8.61 穩定性強化 (已完成)</span></summary><div class="cbody">
-<h4 id="d5-23">🐛 修復內容</h4>
-<ul>
-<li><strong>Timer 記憶體洩漏和競態條件</strong></li>
-<ul>
-<li>加入 <code>_timerLock</code> 物件鎖保護所有 Timer 操作</li>
-<li>捕捉 <code>ObjectDisposedException</code> 並重新建立 Timer</li>
-<li>在 Dispose 方法中使用 lock 確保安全釋放</li>
-</ul>
-</ul>
-<ul>
-<li><strong>多執行緒競態條件</strong></li>
-<ul>
-<li><code>_justTriggeredRightClick</code> 改為 <code>volatile</code></li>
-</ul>
-</ul>
-<ul>
-<li><strong>WndProc 異常處理</strong></li>
-<ul>
-<li>try-catch-finally 結構防止訊息迴圈中斷</li>
-</ul>
-</ul>
-<hr>
-</div></details>
-<details class="chap"><summary id="d5-24"><span class="ct">開發規範</span></summary><div class="cbody">
-<h4 id="d5-25">版本號規範</h4>
-<ul>
-<li>v8.6x: 穩定性和效能優化</li>
-<li>v8.5x: UI/UX 改進</li>
-<li>v8.2x-4x: HID API 整合</li>
-<li>v8.0x-1x: 核心功能開發</li>
-</ul>
-<h4 id="d5-26">文件更新原則</h4>
-<ul>
-<li>每次修改都要更新 CHANGELOG.md</li>
-<li>重大變更要更新 CLAUDE.md</li>
-<li>代碼中加入版本註解 (如 <code>// v8.63: 說明</code>)</li>
-</ul>
-<h4 id="d5-27">代碼品質標準</h4>
-<ul>
-<li>✅ 無 Magic Numbers</li>
-<li>✅ 方法長度 &lt; 50 行</li>
-<li>✅ 無代碼重複</li>
-<li>✅ 資源總是釋放 (Dispose Pattern)</li>
-<li>✅ 異常處理完整</li>
-</ul>
-</div></details></div></section>
+<li>無 Magic Numbers（門檻預設值集中在 <code>TapZoneDetector.DEFAULT_*</code>）</li>
+<li>方法長度 &lt; 50 行</li>
+<li>無代碼重複</li>
+<li>資源總是釋放（Dispose Pattern）</li>
+<li>異常處理完整</li>
+</ul></div></section>
 <section class="doc" id="d6" data-title="第三方聲明"><header class="dh"><div><h2>第三方聲明</h2><p class="dd">引用的 API、範例與授權</p></div><div class="meta"><code>ATTRIBUTION.md</code><span>更新 2026-08-17 20:31</span></div></header><nav class="subnav"><a class="sub l2" href="#d6-1">📚 官方文件與 API</a><a class="sub l3" href="#d6-2">Microsoft Windows SDK</a><a class="sub l3" href="#d6-3">.NET 9.0（v8.72 起；v8.71 以前為 .NET 8.0）</a><a class="sub l2" href="#d6-4">🔍 參考專案</a><a class="sub l3" href="#d6-5">1. ichisadashioko/windows-touchpad</a><a class="sub l3" href="#d6-6">2. jrymk/precision-touchpad-advanced-gestures</a><a class="sub l2" href="#d6-7">🤖 AI 協作聲明</a><a class="sub l3" href="#d6-8">Claude AI (Anthropic)</a><a class="sub l2" href="#d6-9">🛠️ 開發工具</a><a class="sub l3" href="#d6-10">Visual Studio / Visual Studio Code</a><a class="sub l3" href="#d6-11">Git</a><a class="sub l2" href="#d6-12">📦 第三方庫與依賴</a><a class="sub l2" href="#d6-13">✍️ 原創部分</a><a class="sub l3" href="#d6-14">核心演算法</a><a class="sub l3" href="#d6-15">使用者介面</a><a class="sub l3" href="#d6-16">設定管理</a><a class="sub l2" href="#d6-17">🙏 致謝</a><a class="sub l2" href="#d6-18">📄 授權兼容性聲明</a><a class="sub l2" href="#d6-19">📞 聯絡與問題回報</a></nav><div class="foldbar"><button data-fold="open">展開全部</button><button data-fold="close">收合全部</button></div><div class="body"><h2 id="d6-0">代碼出處與第三方聲明</h2>
 <p>本專案使用了以下技術、文件和參考資源。</p>
 <hr>

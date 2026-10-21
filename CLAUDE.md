@@ -27,157 +27,22 @@
 
 ## v8.69 大規模代碼清理 (已完成 ✅)
 
-### 📋 概述
-純修繕版本,不改變任何功能邏輯。修復 4 個 bug、刪除 ~1,600 行死碼、更新全部文件。
-
-### 已完成
-- ✅ A1: Stop() 完整釋放資源 (RIDEV_REMOVE + 鉤子 + Timer)
-- ✅ A3+A4: Form 關閉時防止 ObjectDisposedException
-- ✅ A5: 加入 Finalizer + 標準 Dispose Pattern
-- ✅ A7: MouseSimulator 改用 SendInput,移除 Thread.Sleep
-- ✅ B1-B8: 刪除 9 個 orphan 檔案 + 1 個 dead method + 1 個 dead field
-- ✅ D1: 清除 168 個 v8.xx 歷史註解
-- ✅ D3: 統一預設值到 TapZoneDetector 常數
-- ✅ D5: Mutex 明確釋放
-- ✅ openspec/ 整合為 docs/architecture.md
-- ✅ 註解與文件措辭清理
-
-### 待做
-- ✅ A2: CheckTouchEnd 競態條件 → v8.70 改 WinForms Timer（待實機驗證）
-- ⏳ C1–C4 移到 [docs/未完成盤點總表.md](docs/未完成盤點總表.md)（那份才是權威清單，附證據）
-
----
-
-## v8.64 代碼品質改進計劃 (已完成 ✅)
-
-### 📋 計劃概述
-本版本專注於代碼品質改進,提升可讀性、可維護性和效能。
-
-### 🎯 四大改進項目 (全部完成)
-
-#### 1️⃣ Magic Numbers 重構 (最高優先級) ✅
-**問題**: 魔術數字散佈在多個檔案中,缺乏語義化命名
-
-**完成內容**:
-- TapZoneDetector.cs: 提取 8 個命名常數 (TAP_TIME_MS, DRAG_HOLD_THRESHOLD_MS 等)
-- TouchpadMonitor.cs: 提取 4 個命名常數 (RIGHT_CLICK_SUPPRESS_WINDOW_MS 等)
-- ModernMainForm.cs: 提取 3 個命名常數 (DIAGNOSTIC_UPDATE_INTERVAL_MS 等)
-- 共計 15 個魔術數字全部轉換為語義化常數
-
-**成果**: 代碼可讀性大幅提升,參數調整更簡單明確
-
-#### 2️⃣ CreateControlPanel 長方法重構 (次要優先級) ✅
-**問題**: ModernMainForm.CreateControlPanel 方法長達 169 行
-
-**完成內容**:
-- 拆分為 4 個方法: CreateControlPanel (主方法), CreateRightZoneControls, CreateSensitivityControls, CreateVerticalSplitControls
-- 消除重複的 NumericUpDown + TrackBar 建立模式
-- 每個方法職責單一,長度控制在 60 行以內
-
-**成果**: 代碼組織清晰,易於理解和維護
-
-#### 3️⃣ InvokeRequired 代碼重複消除 (第三優先級) ✅
-**問題**: 3 個事件處理器有相同的跨執行緒呼叫模式
-
-**完成內容**:
-- 建立通用輔助方法 `InvokeIfRequired(Action action)`
-- 重構 Monitor_TouchEvent, Monitor_TapDetected, Monitor_StatusUpdate
-- 統一跨執行緒 UI 更新模式
-
-**成果**: 消除代碼重複,維護更簡單,一致性更好
-
-#### 4️⃣ String 效能優化 (第四優先級) ✅
-**問題**: 高頻率字串插值造成 GC 壓力
-
-**完成內容**:
-- Monitor_TouchEvent: 字串插值改為 String.Format
-- Monitor_StatusUpdate: 字串插值改為直接使用 StringBuilder.Append
-- 減少臨時字串對象的分配
-
-**成果**: 高頻觸控事件處理效能提升,GC 壓力降低
-
-### 📈 實際效益
-- ✅ 代碼可讀性提升 30%+
-- ✅ 代碼重複減少 40%+
-- ✅ 維護成本降低
-- ✅ 長時間運行效能改善
-- ✅ 編譯成功,無錯誤
-
----
-
-## v8.63 Handle 資源洩漏修復 (已完成)
-
-### 🐛 問題描述
-TouchInputMonitor.ProcessTouchInput 方法中,`GetTouchInputInfo` 檢查失敗時提前 return,導致 finally 區塊未執行,Handle 未釋放。
-
-### ✅ 修復內容
-將驗證邏輯移入 try 區塊內,確保 finally 總是執行:
-
-```csharp
-// v8.63: 將檢查移入 try 區塊,確保 finally 一定執行
-try
-{
-    if (!GetTouchInputInfo(lParam, inputCount, inputs, Marshal.SizeOf(typeof(TOUCHINPUT))))
-    {
-        // 無法取得觸控資訊,但 finally 仍會執行釋放 Handle
-        return;
-    }
-    // ... 處理觸控事件
-}
-finally
-{
-    // v8.63: 確保 Handle 總是被釋放,防止資源洩漏
-    CloseTouchInputHandle(lParam);
-}
-```
-
-### 📊 影響
-- 防止長時間運行時系統資源耗盡
-- 提升程式穩定性
-
----
-
-## v8.62 HidApiParser 重構 (已完成)
-
-### ♻️ 重構內容
-- 提取 `ValidateInput` 方法進行輸入驗證
-- 提取 `CoordinateData` 結構封裝座標資料
-- 改善代碼組織和可讀性
-
----
-
-## v8.61 穩定性強化 (已完成)
-
-### 🐛 修復內容
-1. **Timer 記憶體洩漏和競態條件**
-   - 加入 `_timerLock` 物件鎖保護所有 Timer 操作
-   - 捕捉 `ObjectDisposedException` 並重新建立 Timer
-   - 在 Dispose 方法中使用 lock 確保安全釋放
-
-2. **多執行緒競態條件**
-   - `_justTriggeredRightClick` 改為 `volatile`
-
-3. **WndProc 異常處理**
-   - try-catch-finally 結構防止訊息迴圈中斷
+純修繕、不改功能：修 4 個 bug（`Stop()` 完整釋放 RIDEV_REMOVE＋鉤子＋Timer、Form 關閉防 ObjectDisposedException、標準 Dispose Pattern、`MouseSimulator` 改 SendInput），刪 ~1,600 行死碼與 168 個版本註解，預設值統一到 `TapZoneDetector` 常數，openspec/ 併入 `docs/architecture.md`。剩下的 C1–C4 在 [docs/未完成盤點總表.md](docs/未完成盤點總表.md)。
 
 ---
 
 ## 開發規範
 
-### 版本號規範
-- v8.6x: 穩定性和效能優化
-- v8.5x: UI/UX 改進
-- v8.2x-4x: HID API 整合
-- v8.0x-1x: 核心功能開發
-
-### 文件更新原則
-1. 每次修改都要更新 CHANGELOG.md
-2. 重大變更要更新 CLAUDE.md
-3. 代碼中加入版本註解 (如 `// v8.63: 說明`)
+### 版本與紀錄
+- 版本號單一來源：csproj `<Version>`；發新版＝改這行＋打同號 tag（`release.yml` 會檢查兩者一致）。
+- 對外版本紀錄寫 README「版本說明」表；細節與程式碼證據寫 `docs/工作狀態.md`；未完成寫 `docs/未完成盤點總表.md`。改完 md 重跑 `tools/產生交接網頁.py`，跟程式碼放同一個 commit。
+- **不另維護 CHANGELOG**（2026-10-21 刪除；v8.69 以前的舊日誌：`git show 556c15f:CSharp/TouchpadRightClick/CHANGELOG.md`）。
+- **程式碼裡不寫版本註解**（`// v8.xx: …`）：v8.69 清掉過 168 個；改了什麼看 git 與 `docs/工作狀態.md`。
+- 重大變更要更新本檔。
 
 ### 代碼品質標準
-- ✅ 無 Magic Numbers
-- ✅ 方法長度 < 50 行
-- ✅ 無代碼重複
-- ✅ 資源總是釋放 (Dispose Pattern)
-- ✅ 異常處理完整
+- 無 Magic Numbers（門檻預設值集中在 `TapZoneDetector.DEFAULT_*`）
+- 方法長度 < 50 行
+- 無代碼重複
+- 資源總是釋放（Dispose Pattern）
+- 異常處理完整
